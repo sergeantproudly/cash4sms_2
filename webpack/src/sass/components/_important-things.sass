@@ -1,0 +1,117 @@
+.important-things
+    padding: 60rem 0 70rem 0
+    &__center
+        width: 1268rem
+        margin: 0 auto
+    &__border
+        border: 2rem dashed #52CBFF
+        border-radius: 34rem
+        position: relative
+    &__headline
+        font-size: 45rem
+        position: absolute
+        left: 50rem
+        padding: 0 28rem
+        bottom: 100%
+        transform: translateY(50%)
+        font-family: 'Dela Gothic One'
+        background-color: #fff
+    &__things
+        counter-reset: things
+        display: flex
+        align-items: flex-start
+        align-content: flex-start
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 87rem 75rem 54rem 75rem
+        &__thing
+            width: 25%
+            &__number
+                margin: 0 0 20rem 0
+                position: relative
+                &::after
+                    font-family: 'Dela Gothic One'
+                    counter-increment: things
+                    content: "0" counter(things)
+                    font-size: 50rem
+                    line-height: 146.19%
+                    color: #52CBFF
+                    margin: 0 0 0 21rem
+                    display: block
+                    position: relative
+                    z-index: 2
+                &::before
+                    content: ""
+                    background-image: url('../img/thunder.svg')
+                    background-repeat: no-repeat
+                    background-position: center
+                    width: 58rem
+                    height: 105rem
+                    position: absolute
+                    left: 0
+                    top: -26rem
+                    display: block
+                    background-size: 100%
+            &__name
+                font-weight: 500
+                font-size: 21rem
+                line-height: 146.19%
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .important-things
+        padding: 41rem 0 19rem 0
+        &__center
+            width: 748rem
+        &__border
+            border-radius: 34rem
+        &__headline
+            font-size: 40rem
+            padding: 0 20rem 0 5rem
+            left: 20rem
+        &__things
+            padding: 73rem 22rem 56rem 22rem
+            &__thing
+                width: 30%
+                &__number
+                    &::after
+                        font-size: 40rem
+                        margin: 0 0 0 16rem
+                    &::before
+                        width: 40rem
+                        height: 73rem
+                        top: -8rem
+                &__name
+                    font-size: 16rem
+                    line-height: 146.19%
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .important-things
+        padding: 43rem 0 10rem 0
+        &__center
+            width: 290rem
+        &__border
+            border: none
+        &__headline
+            position: relative
+            left: 0
+            top: 0
+            transform: translate(0, 0)
+            padding: 0
+            margin: 0 0 44rem 0
+            font-size: 28rem
+            line-height: 41rem
+        &__things
+            padding: 0
+            &__thing
+                width: 100%
+                margin: 0 0 47rem 0
+                &__number
+                    margin: 0 0 7rem 0
+                    &::after
+                        font-size: 35rem
+                        margin: 0 0 0 21rem
+                    &::before
+                        width: 38rem
+                        height: 70rem
+                        top: -15rem
+                &__name
+                    font-size: 18rem
+                    line-height: 146.19%

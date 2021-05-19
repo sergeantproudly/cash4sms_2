@@ -1,0 +1,106 @@
+.possibilities
+    padding: 20rem 0 50rem 0
+    &__center
+        width: 1300rem
+        margin: 0 auto
+    &__columns
+        display: flex
+        align-items: stretch
+        align-content: stretch
+        justify-content: flex-start
+        flex-wrap: wrap
+        margin: 0 -20rem
+        &__column
+            width: 33.3%
+            padding: 0 20rem
+            &__indent
+                height: 100%
+    &__possibility
+        padding: 35rem 21rem 50rem 40rem
+        background: #FFFFFF
+        box-shadow: 0rem 31rem 49rem -22rem rgba(6, 100, 140, 0.14)
+        border-radius: 19rem
+        height: 100%
+        position: relative
+        &__icon
+            width: 64rem
+            height: 64rem
+            margin: 0 0 18rem 0
+            &__picture
+                display: block
+                &_1
+                    width: 100%
+                &_2
+                    width: 141rem
+                    position: absolute
+                    left: 0
+                    top: 0
+                &_3
+                    width: 148rem
+                    position: absolute
+                    left: 0
+                    top: 0
+        &__name
+            font-weight: 500
+            font-size: 21rem
+            line-height: 31rem
+            margin: 0 0 19rem 
+        &__description
+            font-size: 17rem
+            line-height: 140%
+            color: #A1ABB4
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .possibilities
+        padding: 20rem 0 20rem 0
+        &__center
+            width: 714rem
+        &__columns
+            margin: 0 -9rem
+            &__column
+                padding: 0 9rem
+            &__column
+                &__indent
+        &__possibility
+            padding: 36rem 20rem
+            &__icon
+                width: 57rem
+                height: 57rem
+                &__picture
+                    &_2
+                        width: 130rem
+                        top: 4rem
+                    &_3
+                        width: 119rem
+                        top: 19rem
+            &__name
+                font-size: 16rem
+                line-height: 24rem
+            &__description
+                font-size: 15rem
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .possibilities
+        padding: 5rem 0 5rem 0
+        &__center
+            width: 290rem
+        &__columns
+            &__column
+                width: 100%
+                margin: 0 0 20rem 0
+                &__indent
+        &__possibility
+            padding: 35rem 16rem
+            &__icon
+                &__picture
+                    &_2
+                        width: 150rem
+                        top: -5rem
+                    &_3
+                        width: 142rem
+                        top: 6rem
+            &__name
+                font-size: 18rem
+                line-height: 27rem
+                margin: 0 0 15rem 0
+            &__description
+                font-size: 15rem
+                line-height: 140%

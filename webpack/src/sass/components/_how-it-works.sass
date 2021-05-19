@@ -1,0 +1,149 @@
+.how-it-works
+    padding: 70rem 0 70rem 0
+    &__center
+        width: 1170rem
+        margin: 0 auto
+    &__headline
+        font-size: 45rem
+        line-height: 65rem
+        font-family: 'Dela Gothic One'
+        margin: 0 0 32rem 0
+    &__blocks &__block:nth-child(odd) &__block__illustration
+        background-image: url('../img/how-it-works-background-1.svg')
+        width: 45%
+    &__blocks &__block:nth-child(even) &__block__illustration
+        order: 2
+        background-image: url('../img/how-it-works-background-2.svg')
+    &__block
+        display: flex
+        align-items: center
+        align-content: center
+        justify-content: space-between
+        flex-wrap: wrap
+        margin: 0 -20rem
+        &__illustration
+            height: 440rem
+            width: 50%
+            padding: 0 20rem
+            background-repeat: no-repeat
+            background-position: center
+            background-size: 100%
+            display: flex
+            align-content: center
+            align-items: center
+            justify-content: center
+            max-height: 50%
+            &_1
+            &__picture
+                display: block
+                &_1
+                    width: 43%
+                &_2
+                    width: 47%
+        &__info
+            width: 43%
+        &__headline
+            font-family: 'Dela Gothic One'
+            font-size: 35rem
+            line-height: 51rem
+            margin: 0 0 16rem 0
+        &__description
+            font-weight: 500
+            font-size: 21rem
+            line-height: 140%
+            margin: 0 0 18rem 0
+        &__note
+            font-size: 17rem
+            line-height: 140%
+            margin: 0 0 34rem 0
+        &__slides
+            &__slide
+                height: 10rem
+                width: 70rem
+                border-radius: 4000rem
+                background-color: rgba(82, 203, 255, 0.2)
+                margin: 0 8rem 0 0
+                display: inline-block
+                overflow: hidden
+                &__percent
+                    height: 100%
+                    width: 0%
+                    background-color: rgba(82, 203, 255, 1)
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .how-it-works
+        padding: 30rem 0 70rem 0
+        &__center
+            width: 714rem
+        &__headline
+            font-size: 40rem
+            line-height: 58rem
+        &__blocks &__block:nth-child(odd) &__block__illustration
+            width: 37%
+        &__blocks &__block:nth-child(odd) &__block__info
+            width: 57%
+        &__block
+            margin: 0 0 78rem 0
+            &:last-child
+                margin: 0
+            &__illustration
+                height: 198rem
+                width: 38%
+            &_1
+                &__picture
+                &_1
+            &__info
+                width: 48%
+            &__headline
+                font-size: 24rem
+                margin: 0 0 7rem 0
+            &__description
+                font-size: 18rem
+                margin: 0 0 22rem 0
+            &__note
+                font-size: 15rem
+                margin: 0 0 26rem 0
+            &__slides
+                &__slide
+                    width: 52rem
+                    &__percent
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .how-it-works
+        padding: 16rem 0 20rem 0
+        &__center
+            width: 290rem
+        &__headline
+            font-size: 28rem
+            line-height: 41rem
+            margin: 0 0 25rem 0
+        &__blocks &__block:nth-child(odd) &__block__illustration
+            width: 100%
+        &__blocks &__block:nth-child(even) &__block__illustration
+            order: 1
+        &__blocks &__block:nth-child(even) &__block__info
+            order: 2
+        &__block
+            margin: 0 0 76rem
+            &:last-child
+                margin: 0
+            &__illustration
+                width: 100%
+                height: 208rem
+                margin: 0 0 16rem 0
+            &_1
+                &__picture
+                &_1
+            &__info
+                width: 100%
+            &__headline
+                font-size: 20rem
+                line-height: 29rem
+            &__description
+                font-size: 18rem
+                line-height: 140%
+            &__note
+                font-size: 15rem
+                line-height: 140%
+            &__slides
+                &__slide
+                    width: 53rem
+                    &__percent

@@ -1,0 +1,26 @@
+$container-max-widths: (
+  tablet: 450,
+  desktop: 1000
+) !default;
+
+
+$grid-breakpoints: (
+  tablet: #{map-get($container-max-widths, tablet)},
+  desktop: #{map-get($container-max-widths, desktop)},
+) !default;
+
+@media (min-width: #{map-get($grid-breakpoints, desktop)}px) {
+  html {
+    font-size: 0.06944444444vw;
+  }
+}
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px)) {
+  html {
+    font-size: 0.130208333vw;
+  }
+}
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px)) {
+  html {
+    font-size: 0.3125vw;
+  }
+}

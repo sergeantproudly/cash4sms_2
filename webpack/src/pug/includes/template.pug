@@ -1,0 +1,76 @@
+-
+    var url = `${htmlWebpackPlugin.options.mode == "none" ? "/works/sms4cash/" : "/"}`
+    var versionStyleAndSripts = Date.now();
+    function format(text) {
+        let prepositionsAndConjunctions = [
+            // русские предлоги
+            "а-ля","без","без ведома","безо","благодаря","близ","близко от","в","в виде","в зависимости от","в интересах","в качестве","в лице","в отличие от","в отношении","в пандан","в пользу","в преддверии","в продолжение","в результате","в роли","в связи с","в силу","в случае","в соответствии с","в течение","в целях","в честь","вблизи","ввиду","вглубь","вдогон","вдоль","вдоль по","взамен","включая","вкруг","вместо","вне","внизу","внутри","внутрь","во","во имя","во славу","вовнутрь","возле","вокруг","вопреки","вослед","впереди","вплоть до","впредь до","вразрез","вроде","вслед","вслед за","вследствие","встречу","выключая","для","для-ради","до","за","за вычетом","за исключением","за счёт","замест","заместо","из","из-за","из-под","из-подо","изнутри","изо","исключая","исходя из","к","касаемо","касательно","ко","кончая","кроме","кругом","лицом к лицу с","меж","между","мимо","на","на благо","на виду у","на глазах у","на предмет","наверху","навроде","навстречу","над","надо","назад","назади","назло","накануне","наместо","наперекор","наперерез","наперехват","наподобие","наподобье","напротив","наряду с","насупротив","насчёт","начиная с","не без","не считая","невзирая на","недалеко от","независимо от","несмотря","несмотря на","ниже","о","об","обо","обок","обочь","около","окрест","окроме","окромя","округ","опосля","опричь","от","от имени","от лица","относительно","ото","перед","передо","по","по линии","по мере","по направлению к","по поводу","по причине","по случаю","по сравнению с","по-за","по-над","по-под","поблизости от","повдоль","поверх","под","под видом","под эгидой","подле","подо","подобно","позади","позадь","позднее","помимо","поперёд","поперёк","порядка","посверху","посереди","посередине","посерёдке","посередь","после","посреди","посредине","посредством","пред","предо","преж","прежде","при","при помощи","применительно к","про","промеж","промежду","против","противно","противу","путём","ради","рядом с","с","с ведома","с помощью","с прицелом на","с точки зрения","с целью","сверх","сверху",
+            // русские союзы
+            "а","а вдо­ба­вок","а имен­но","а так­же","а то","бла­го­да­ря тому что","бла­го","буде","буд­то","вдо­ба­вок","в резуль­та­те чего","в резуль­та­те того что","в свя­зи с тем что","в силу того что","в слу­чае если","в то вре­мя как","в том слу­чае если","в силу чего","вви­ду того что","вопре­ки тому что","вро­де того как","вслед­ствие чего","вслед­ствие того что","да вдо­ба­вок","да еще","да (= и)","да (= но)","да и","да и то","дабы","даже","даром что","для того чтобы","же","едва","едва…, как","едва…, лишь","еже­ли","если","если бы","если не…, то","если…, то","затем что­бы","затем что","зато","зачем","и","и все же","и зна­чит","а имен­но","и поэто­му","и при­том","и все-таки","и сле­до­ва­тель­но","и то","и тогда","и еще","и…, и","ибо","и вдо­ба­вок","из-за того что","или","или…, или","кабы","как","Как ско­ро","как буд­то","как если бы","как слов­но","как толь­ко","как…, так и","как-то?","когда","когда…, то","коли","к тому же","кро­ме того","ли…, ли","либо","либо…, либо","лишь","лишь бы","лишь толь­ко","меж­ду тем как","неже­ли","не столь­ко…, сколько","не то…, не то","не толь­ко не…, но и","не толь­ко…, но и","не толь­ко…., а и","не толь­ко…, но даже","невзи­рая на то что","неза­ви­си­мо от того что","несмот­ря на то что","ни…, ни","но","одна­ко","осо­бен­но","отто­го","отто­го что","отче­го","перед тем как","по мере того как","по при­чине того что","подоб­но тому как","пока","пока­мест","поку­да","пока не","после того как","посколь­ку","пото­му","пото­му что","поче­му","преж­де чем","при всем том что","при усло­вии что","при­том","при­чем","пус­кай","пусть","ради того чтобы","раз","рань­ше чем","с тем чтобы","с тех пор как","слов­но","так же…, как","так же…, как и","так как","так как…, то","так что","так­же","тем более что","тогда как","то есть","то ли…, то ли","то…, то","тоже","толь­ко","толь­ко бы","толь­ко что","толь­ко лишь","толь­ко чуть","точ­но","хотя","хотя и…, но","хотя…, но","чем","чем…, тем","что","чтоб","что­бы",
+            // английские предлоги
+            "aboard","about","above","absent","across","afore","after","against","along","amid","amidst","among","amongst","around","as","aside","aslant","astride","at","athwart","atop","bar","before","behind","below","beneath","beside","besides","between","betwixt","beyond","but","by","circa","despite","down","except","for","from","given","in","inside","into","like","mid","minus","near","neath","next","notwithstanding","of","off","on","opposite","out","outside","over","pace","per","plus","post","pro","qua","round","save","since","than","through","till","times","to","toward","towards","under","underneath","unlike","until","up","versus","via","vice","with","without","barring","concerning","considering","depending","during","granted","excepting","excluding","failing","following","including","past","pending","regarding","alongside","within","outside","upon","onto","throughout","wherewith","according to","ahead of","apart from","as far as","as for","as of","as per","as regards","aside from","as well as","away from","because of","by force of","by means of","by virtue of","close to","contrary to","due to","except for","far from","for the sake of","in accordance with","in addition to","in case of","in connection with","in consequence of","in front of","in spite of","in the back of","in the course of","in the event of","in the middle of","in to (into)","inside of","instead of","in view of","near to","next to","on account of","on to (onto)","on top of","opposite to","out of","outside of","owing to","thanks to","up to","with regard to","with respect to",
+            // английские союзы
+            "also","and","as","as…. as","as far as","as long as","as soon as","as well as","because","because of","both…. and","but","either… or","however","if","in case","in order","moreover","neither… nor","nevertheless","no matter where","no matter how","no matter when","no matter who","no matter what","no matter why","nor","now that","once","on the contrary","on the other hand","or","otherwise","so… that","so… as","not so as","still","than","that","that is why","therefore","although","thus","unless","what","whether","while","yet","not yet","for","against","like","unlike","with","without","within","according to…","owing to","in spite of…","in terms of…","on behalf of…","meanwhile","from now on…","from time to time","beyond","whereas","at least","at last","as if, as though","on condition"
+        ]
+
+        for (let i = 0; i < prepositionsAndConjunctions.length; i++) {
+            let prepositionAndConjunction = prepositionsAndConjunctions[i];
+            text = text.replace(new RegExp(` ${prepositionAndConjunction} `,"g"), ` ${prepositionAndConjunction}&nbsp;`)
+            text = text.replace(new RegExp(` ${prepositionAndConjunction[0].toUpperCase()}${prepositionAndConjunction.toUpperCase().slice(1)} `,"g"), ` ${prepositionAndConjunction.toUpperCase()}&nbsp;`)
+        }
+
+        return text
+    }
+    
+
+doctype html
+html( lang="en" )
+    head
+        meta(charset="utf-8")
+
+        block seo
+
+        meta(
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+            )
+
+        link(
+            href=`${url}assets/css/main.css?v-`+versionStyleAndSripts
+            rel="stylesheet"
+        )
+            
+        link(
+            rel="shortcut icon" 
+            href=`${url}favicon.ico?v-`+versionStyleAndSripts
+        )
+
+        meta(
+            property="og:image" 
+            content=`${url}assets/img/preview.png`
+        )
+
+        <meta property="og:locale" content="en_EN" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <meta name="twitter:card" content="summary_large_image" />
+        meta(
+            name="twitter:image" 
+            content=`${url}assets/img/preview.png`
+        )
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+            
+    body
+            
+        block content
+        
+        script(
+            src=`${url}assets/js/common.js?v-`+versionStyleAndSripts
+        )

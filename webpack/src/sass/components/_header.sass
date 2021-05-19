@@ -1,0 +1,186 @@
+.header
+    padding: 36rem 0 11rem 0
+    &__center
+        width: 1170rem
+        margin: 0 auto
+        display: flex
+        align-items: center
+        align-content: center
+        justify-content: space-between
+    &__side
+    &__logo
+        text-decoration: none
+        display: inline-block
+        &__picture
+            height: 37rem
+    &__links
+        display: inline-block
+        margin: 0 26rem 0 0
+        vertical-align: middle
+        &__link
+            text-decoration: none
+            font-size: 14rem
+            display: inline-block
+            margin: 0 0 0 21rem
+            color: $c-black
+            transition: 0.3s
+            &:hover
+                opacity: 0.3
+    &__install
+        text-decoration: none
+        font-size: 12rem
+        border: 2rem solid #FFDF3A
+        border-radius: 15rem
+        padding: 17rem 27rem
+        color: $c-black
+        display: inline-block
+        vertical-align: middle
+        text-transform: uppercase
+        transition: 0.1s
+        &:hover
+            background-color: #FFDF3A
+        &:active
+            background-color: #FFD130
+            border: 2rem solid #FFD130
+    &__burger
+        display: none
+        &__lines
+            &__line
+        &__back
+        &__menu
+            &__link
+                text-decoration: none
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .header
+        padding: 30rem 0 11rem 0
+        &__center
+            width: 714rem
+        &__side
+        &__logo
+        &__links
+            &__link
+        &__install
+        &__burger
+            &__lines
+                &__line
+            &__back
+            &__menu
+                &__link
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .header
+        padding: 18rem 0 11rem 0
+        &__center
+            width: 290rem
+        &__side
+        &__logo
+            &__picture
+                height: 24rem
+        &__links
+            display: none
+            &__link
+        &__install
+            padding: 8rem 15rem
+            font-size: 11rem
+            border-radius: 11rem
+        &__burger
+            vertical-align: middle
+            display: inline-block
+            &__back
+                position: fixed
+                left: 0
+                bottom: -50rem
+                right: 0
+                top: -50rem
+                z-index: 100
+                display: none
+                transition: 0.1s
+                &_1
+                    background: rgba(38, 50, 56, 0)
+                    display: block
+                &_2
+                    background: rgba(38, 50, 56, 0.19)
+            &__menu
+                position: absolute
+                top: calc(100% + 18rem)
+                background: #FFFFFF
+                border-radius: 16rem
+                padding: 20rem 33rem
+                right: -7rem
+                display: none
+                transition: 0.1s
+                &_1
+                    display: block
+                    opacity: 0
+                    transform: translateY(10rem)
+                &_2
+                    opacity: 1
+                    transform: translateY(0rem)
+                &__corner
+                    position: absolute
+                    bottom: 100%
+                    right: 19rem
+                    width: 13rem
+                    height: 6rem
+                &__link
+                    font-size: 17rem
+                    line-height: 165%
+                    margin: 0 0 12rem 0
+                    text-align: center
+                    display: block
+                    color: inherit
+                    &:last-child
+                        margin: 0
+            &__lines
+                z-index: 101
+                position: relative
+                width: 35rem
+                height: 35rem
+                border: none 
+                margin: 0 0 0 10rem
+                background: #36C3FF
+                box-shadow: 0rem 12rem 21rem rgba(6, 100, 140, 0.12)
+
+                border-radius: 50%
+                display: none
+                align-items: center
+                align-content: center
+                justify-content: center
+                flex-wrap: wrap
+                padding: 0 9rem
+                transition-duration: 0.2s
+                display: inline-flex
+                &::after,
+                &::before,
+                &__line
+                    display: inline-block
+                    content: ""
+                    width: 100%
+                    margin: 2.5rem 0
+                    height: 2rem
+                    background-color: #fff
+                    transform-origin: center
+                    will-change: transform, margin, width
+                &__line
+                    transition: margin 0.3s, width 0.3s
+                &::after,
+                &::before
+                    transition: transform 0.3s, margin 0.3s
+                    position: relative
+                    z-index: 3
+                &_active-1
+                    padding: 0 9rem
+                &_active-1::after,
+                &_active-1::before,
+                &_active-1 &__line
+                    margin: 0rem 0
+                &_active-1::after,
+                &_active-1::before
+                    background-color: #fff
+                &_active-1::after
+                    transform: translateY(-100%) rotate(45deg)
+                &_active-1::before
+                    transform: translateY(100%) rotate(-45deg)
+                &_active-2::after,
+                &_active-2::before
+                &_active-2 &__line 
+                    width: 0.1rem

@@ -1,0 +1,14 @@
+.br
+    display: none
+    &_desktop
+        display: block
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .br
+        display: none
+        &_tablet
+            display: block
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .br
+        display: none
+        &_mobile
+            display: block

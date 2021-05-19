@@ -1,0 +1,102 @@
+.start-earning
+    padding: 20rem 0 30rem 0
+    &__shell
+        width: 1170rem
+        min-height: 417rem
+        margin: 0 auto
+        position: relative
+        &__background
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            width: 100%
+            &_desktop
+            &_tablet
+                display: none
+            &_mobile
+                display: none
+    &__info
+        padding: 92rem 0 0 517rem
+        position: relative
+        z-index: 2
+    &__headline
+        font-size: 35rem
+        margin: 0 0 27rem 0
+        font-family: 'Dela Gothic One'
+    &__description
+        margin: 0 0 33rem 0
+        font-size: 18rem
+        line-height: 146.19%
+    &__trigger
+        border: none
+        padding: 22rem 50rem
+        background: #FFE03A
+        box-shadow: 0rem 25rem 38rem -10rem rgba(160, 210, 230, 0.31)
+        border-radius: 20rem
+        font-size: 18rem
+        display: inline-block
+        text-decoration: none
+        color: $c-black
+        transition: 0.1s
+        &:hover
+            background-color: #FFD130
+        &:active
+            background-color: #FFC329
+            box-shadow: 0rem 25rem 38rem -10rem rgba(160, 210, 230, 0)
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .start-earning
+        padding: 58rem 0 30rem 0
+        &__shell
+            width: 714rem
+            min-height: 354rem
+            &__background
+                &_desktop
+                    display: none
+                &_tablet
+                    display: block
+                &_mobile
+        &__info
+            padding: 67rem 0 0 308rem
+        &__headline
+            font-size: 24rem
+        &__description
+            font-size: 17rem
+            line-height: 146.19%
+            margin: 0 0 26rem 0
+        &__trigger
+            padding: 19rem 35rem
+            font-size: 17rem
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .start-earning
+        padding: 13rem 0 18rem 0
+        &__shell
+            width: 304rem
+            min-height: 440rem
+            &__background
+                &_desktop
+                    display: none
+                &_tablet
+                &_mobile
+                    display: block
+        &__info
+            padding: 45rem 20rem 0 20rem
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+        &__headline
+            font-size: 20rem
+            line-height: 29rem
+            margin: 0 0 15rem 0
+            width: 100%
+            text-align: center
+        &__description
+            font-size: 16rem
+            line-height: 146.19%
+            margin: 0 0 20rem 0
+            width: 100%
+            text-align: center
+        &__trigger
+            padding: 19rem 35rem
+            font-size: 17rem
+            border-radius: 13rem

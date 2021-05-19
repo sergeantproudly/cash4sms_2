@@ -1,0 +1,428 @@
+extends ./includes/template.pug
+
+block seo
+    -
+        let title = '' 
+        let description = '' 
+
+    title !{title}
+    meta(
+        name="description"
+        property="og:description" 
+        content=`${description}`
+    )
+    <meta name="keywords"       content="" />
+
+    meta(
+        property="og:title"
+        content=`${title}`
+    )
+    meta(
+        name="twitter:description"
+        content=`${description}`
+    )
+    meta(
+        name="twitter:title"
+        content=`${title}`
+    )
+
+block content
+    include ./includes/header.pug
+    +header()
+    header.header
+        .header__center
+            .header__side
+                a(
+                    animation
+                    animation-arrow="bottom"
+                    href="#"
+                ).header__logo
+                    img(src=`${url}assets/img/logo.svg`).header__logo__picture
+            .header__side
+                div(
+                    animation
+                    animation-arrow="bottom"
+                ).header__links
+                    a(href=`${url}`).header__links__link Blog
+                    a(href=`${url}`).header__links__link FAQ
+                a(
+                    animation
+                    animation-arrow="bottom"
+                    href=`https://play.google.com/store/apps/details?id=com.cash4sms.android`
+                ).header__install Install the app
+                .header__burger
+                    div(
+                        animation
+                        animation-arrow="bottom"
+                    ).header__burger__lines
+                        .header__burger__lines__line
+                        .header__burger__menu
+                            <svg class="header__burger__menu__corner"  viewBox="0 0 13 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.5 0.5L0 6H13L6.5 0.5Z" fill="white"/>
+                            </svg>
+                            a(href=`${url}`).header__burger__menu__link Blog
+                            a(href=`${url}`).header__burger__menu__link FAQ
+                    .header__burger__back
+    section.initial-screen
+        .initial-screen__center
+            .initial-screen__tiles
+                .initial-screen__tiles__left
+                    div(
+                        animation
+                    ).initial-screen__tiles__left__tile
+                        img(src=`${url}assets/img/initial-screen-tail-cells.svg`).initial-screen__tiles__left__tile__cells
+                        .initial-screen__tiles__left__tile__center
+                            h1(
+                                animation
+                                animation-arrow="bottom"
+                            ).initial-screen__tiles__headline Use your SMS <br class="br br_desktop">channel to the<br class="br br_desktop"> maximum
+                            a(
+                                animation
+                                animation-arrow="bottom"
+                                href="https://play.google.com/store/apps/details?id=com.cash4sms.android"
+                            ).initial-screen__tiles__trigger Install the app
+                .initial-screen__tiles__right
+                    div(
+                        animation
+                    ).initial-screen__tiles__right__tile.initial-screen__tiles__right__tile_1
+                        p(
+                            animation
+                            animation-arrow="bottom"
+                        ).initial-screen__tiles__subtitle Sell SMS <br class="br br_desktop">you<br class="br br_tablet"> don't use
+                    div(
+                        animation
+                    ).initial-screen__tiles__right__tile.initial-screen__tiles__right__tile_2
+                        p(
+                            animation
+                            animation-arrow="bottom"
+                        ).initial-screen__tiles__subtitle Get SMS <br class="br br_desktop br_tablet">to get paid
+    section.possibilities
+        .possibilities__center
+            .possibilities__columns
+                .possibilities__columns__column
+                    .possibilities__columns__column__indent
+                        div(
+                            animation
+                        ).possibilities__possibility
+                            div(
+                                animation
+                            ).possibilities__possibility__icon
+                                img(src=`${url}assets/img/possibilities-icon-1.svg`).possibilities__possibility__icon__picture.possibilities__possibility__icon__picture_1
+                            h2(
+                                animation
+                                animation-arrow="bottom"
+                            ).possibilities__possibility__name The app is available <br class="br br_tablet br_desktop">all over<br class="br br_mobile"> the world
+                            p(
+                                animation
+                                animation-arrow="bottom"
+                            ).possibilities__possibility__description Check if your mobile plan includes SMS outside of your country
+                .possibilities__columns__column
+                    .possibilities__columns__column__indent
+                        div(
+                            animation
+                        ).possibilities__possibility
+                            div(
+                                animation
+                            ).possibilities__possibility__icon
+                                img(src=`${url}assets/img/possibilities-icon-2.svg`).possibilities__possibility__icon__picture.possibilities__possibility__icon__picture_2
+                            h2(
+                                animation
+                                animation-arrow="bottom"
+                            ).possibilities__possibility__name Earnings on outgoing<br class="br br_tablet br_desktop br_mobile"> SMS € 0.10-0.40
+                            p(
+                                animation
+                                animation-arrow="bottom"
+                            ).possibilities__possibility__description Check if your mobile plan includes SMS outside of your country
+                .possibilities__columns__column
+                    .possibilities__columns__column__indent
+                        div(
+                            animation
+                        ).possibilities__possibility
+                            div(
+                                animation
+                            ).possibilities__possibility__icon
+                                img(src=`${url}assets/img/possibilities-icon-3.svg`).possibilities__possibility__icon__picture.possibilities__possibility__icon__picture_3
+                            h2(
+                                animation
+                                animation-arrow="bottom"
+                            ).possibilities__possibility__name Earnings on <br class="br br_desktop">incoming<br class="br br_tablet br_mobile"> SMS € 0.2
+                            p(
+                                animation
+                                animation-arrow="bottom"
+                            ).possibilities__possibility__description Check if your mobile plan includes SMS outside of your country
+    section.how-it-works
+        .how-it-works__center
+            h2.how-it-works__headline How It Works
+            .how-it-works__blocks
+                .how-it-works__block
+                    div(
+                        animation
+                    ).how-it-works__block__illustration.how-it-works__block__illustration_1
+                        img(data-attach-slide="0" src=`${url}assets/img/how-it-works-illustration-1.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
+                        img(data-attach-slide="1" src=`${url}assets/img/how-it-works-illustration-2.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
+                    div(
+                        animation
+                    ).how-it-works__block__info
+                        h3(data-attach-slide="0").how-it-works__block__headline Outgoing SMS
+                        p(data-attach-slide="0").how-it-works__block__description We will be sending your SMS to different countries: UK, Latvia, Taiwan will be sending your SMS to different countries: UK, Latvia, Taiwan 
+                        p(data-attach-slide="0").how-it-works__block__note Check if your mobile plan includes SMS outside of your country
+
+                        h3(data-attach-slide="1").how-it-works__block__headline Incoming SMS
+                        p(data-attach-slide="1").how-it-works__block__description What is incoming sms?
+                        p(data-attach-slide="1").how-it-works__block__note We will send you SMS with random text and numbers. If you receive these SMS. it means that the SMS channel is working perfectly fine on your end
+                        div(
+                            data-slides
+                        ).how-it-works__block__slides
+                            div(
+                                data-slides-slide
+                            ).how-it-works__block__slides__slide
+                                div(
+                                    data-slides-slide-percent
+                                ).how-it-works__block__slides__slide__percent
+                            div(
+                                data-slides-slide
+                            ).how-it-works__block__slides__slide
+                                div(
+                                    data-slides-slide-percent
+                                ).how-it-works__block__slides__slide__percent
+                .how-it-works__block
+                    div(
+                        animation
+                    ).how-it-works__block__illustration.how-it-works__block__illustration_1
+                        img(data-attach-slide="0" src=`${url}assets/img/how-it-works-illustration-2.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
+                        img(data-attach-slide="1" src=`${url}assets/img/how-it-works-illustration-1.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
+                    div(
+                        animation
+                    ).how-it-works__block__info
+                        h3(data-attach-slide="0").how-it-works__block__headline Incoming SMS
+                        p(data-attach-slide="0").how-it-works__block__description What is incoming sms?
+                        p(data-attach-slide="0").how-it-works__block__note We will send you SMS with random text and numbers. If you receive these SMS. it means that the SMS channel is working perfectly fine on your end
+
+                        h3(data-attach-slide="1").how-it-works__block__headline Outgoing SMS
+                        p(data-attach-slide="1").how-it-works__block__description We will be sending your SMS to different countries: UK, Latvia, Taiwan 
+                        p(data-attach-slide="1").how-it-works__block__note Check if your mobile plan includes SMS outside of your country
+                        div(
+                            data-slides
+                        ).how-it-works__block__slides
+                            div(
+                                data-slides-slide
+                            ).how-it-works__block__slides__slide
+                                div(
+                                    data-slides-slide-percent
+                                ).how-it-works__block__slides__slide__percent
+                            div(
+                                data-slides-slide
+                            ).how-it-works__block__slides__slide
+                                div(
+                                    data-slides-slide-percent
+                                ).how-it-works__block__slides__slide__percent
+    section.important-things
+        .important-things__center
+            div(
+                animation
+            ).important-things__border
+                h2(
+                    animation
+                    animation-arrow="bottom"
+                ).important-things__headline A Few Important Things
+                .important-things__things
+                    div(
+                        animation
+                        animation-arrow="bottom"
+                    ).important-things__things__thing
+                        .important-things__things__thing__number
+                        h3.important-things__things__thing__name We do not guarantee <br class="br br_desktop br_mobile">incoming SMS
+                    div(
+                        animation
+                        animation-arrow="bottom"
+                    ).important-things__things__thing
+                        .important-things__things__thing__number
+                        h3.important-things__things__thing__name The app does not <br class="br br_desktop">work<br class="br br_mobile"> for everyone
+                    div(
+                        animation
+                        animation-arrow="bottom"
+                    ).important-things__things__thing
+                        .important-things__things__thing__number
+                        h3.important-things__things__thing__name The app can be <br class="br br_desktop br_mobile">disconnected at any time
+    mixin startEarning()
+        section.start-earning
+            div(
+                animation
+            ).start-earning__shell
+                img(src=`${url}assets/img/start-earning-background.png`).start-earning__shell__background.start-earning__shell__background_desktop
+                img(src=`${url}assets/img/start-earning-background-tablet.png`).start-earning__shell__background.start-earning__shell__background_tablet
+                img(src=`${url}assets/img/start-earning-background-mobile.png`).start-earning__shell__background.start-earning__shell__background_mobile
+                .start-earning__info
+                    h2(
+                        animation
+                        animation-arrow="bottom"
+                    ).start-earning__headline Start Earning
+                    p(
+                        animation
+                        animation-arrow="bottom"
+                    ).start-earning__description There are ways to make mobile communication <br class="br br_desktop">cheaper and more<br class="br br_tablet"> convenient. Just try cash4sms!
+                    a(
+                        animation
+                        animation-arrow="bottom"
+                        href="https://play.google.com/store/apps/details?id=com.cash4sms.android"
+                    ).start-earning__trigger Install the app
+    +startEarning()
+    section.reviews
+        .reviews__center
+            div(
+                animation 
+            ).reviews__shell
+                h2(
+                    animation
+                    animation-arrow="bottom"
+                ).reviews__headline Reviews
+                .reviews__columns
+                    .reviews__columns__column
+                        div(
+                            animation
+                            animation-arrow="bottom"
+                        ).reviews__review
+                            .reviews__review__head
+                                .reviews__review__avatar.reviews__review__avatar_1
+                                    .reviews__review__letters D
+                                .reviews__review__info
+                                    p.reviews__review__name Duke Durham
+                                    .reviews__review__info__bottom
+                                        .reviews__review__stars
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                        p.reviews__review__date Jan 20, 2021
+                            p.reviews__review__description I install this app in March, since then I have had no problem with it. And as far as getting paid from it I have had no problem. Although the money is deposited into PayPal or in euros through the PayPal app it is extremely easy to convert the Euro cash into u.s. dollars. I have recommended this app to all of my friends and family. And to the cash out family I just thank you for this app it has been a great help to me and I appreciate customer service and how quickly they respond to any question that I may have. Keep up the good work.
+                        div(
+                            animation
+                            animation-arrow="bottom"
+                        ).reviews__review
+                            .reviews__review__head
+                                .reviews__review__avatar.reviews__review__avatar_2
+                                    .reviews__review__letters D
+                                .reviews__review__info
+                                    p.reviews__review__name DarketXY
+                                    .reviews__review__info__bottom
+                                        .reviews__review__stars
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                        p.reviews__review__date Feb 1, 2021
+                            p.reviews__review__description  This app is amazing. Its been running for me over 3 months and I have made over $150. The support is very helpful. I would love to see a "Cashout" button in the next updates.
+                    .reviews__columns__column
+                        div(
+                            animation
+                            animation-arrow="bottom"
+                        ).reviews__review
+                            .reviews__review__head
+                                .reviews__review__avatar.reviews__review__avatar_3
+                                    .reviews__review__letters D
+                                .reviews__review__info
+                                    p.reviews__review__name Angelique Elijah
+                                    .reviews__review__info__bottom
+                                        .reviews__review__stars
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                        p.reviews__review__date Feb 1, 2021
+                            p.reviews__review__description  This app is amazing. Its been running for me over 3 months and I have made over $150. The support is very helpful. I would love to see a "Cashout" button in the next updates.
+                        div(
+                            animation
+                            animation-arrow="bottom"
+                        ).reviews__review
+                            .reviews__review__head
+                                .reviews__review__avatar.reviews__review__avatar_4
+                                    .reviews__review__letters A
+                                .reviews__review__info
+                                    p.reviews__review__name Duke Durham
+                                    .reviews__review__info__bottom
+                                        .reviews__review__stars
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                            img(src=`${url}assets/img/star.svg`).reviews__review__star
+                                        p.reviews__review__date Jan 20, 2021
+                            p.reviews__review__description his has to be one of my favorite money making apps. It's fast, easy to use, has a low payout threshold, and quickly pays out to your PayPal account. I have had the app for about a month and have withdrawn 5 times and received the automatic monthly payment 1 time, for a total of 6 payouts. As for people complaining about it "taking their money" the app clearly states when you are setting it up that it uses intl text credits, if you don't have intl unlimited plan I wouldn't recommend using it.
+    section(
+        class=`faq`
+    )
+        .faq__center
+            h2(
+                animation
+                animation-arrow="bottom"
+            ).faq__headline Questions <br class="br br_mobile">& Answers
+            .faq__questions
+                div(
+                    animation
+                    animation-arrow="bottom"
+                ).faq__question
+                    .faq__question__top
+                        p(
+                        ).faq__question__headline What is the main goal of Cash4SMS?
+                        div(
+                        ).faq__question__open
+                    div.faq__question__answer 
+                        p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+                div(
+                    animation
+                    animation-arrow="bottom"
+                ).faq__question
+                    .faq__question__top
+                        p(
+                        ).faq__question__headline Which mobile operating systems does Cash4SMS support?
+                        div(
+                        ).faq__question__open
+                    div.faq__question__answer 
+                        p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+    +startEarning()
+    footer(
+        animation
+    ).footer
+        .footer__center
+            .footer__columns
+                .footer__columns__left
+                    p(
+                        animation
+                        animation-arrow="bottom"
+                    ).footer__copyright © 2021 cash4sms. All rights reserved.
+                    .footer__links
+                        a(
+                            animation
+                            animation-arrow="bottom"
+                            href=`#`
+                        ).footer__links__link Privacy Policy
+                        a(
+                            animation
+                            animation-arrow="bottom"
+                            href=`#`
+                        ).footer__links__link Cookie Policy
+                        a(
+                            animation
+                            animation-arrow="bottom"
+                            href=`#`
+                        ).footer__links__link Terms of Use
+                .footer__columns__right
+                    .footer__contacts
+                        p(
+                            animation
+                            animation-arrow="bottom"
+                        ).footer__contacts__headline Contact Us
+                        p(
+                            animation
+                            animation-arrow="bottom"
+                        ).footer__contacts__description We’d love to hear from you and answer any <br class="br br_tablet">questions you might have.
+                        a(
+                            animation
+                            animation-arrow="bottom"
+                            href="mailto:hello@cash4sms.today"
+                        ).footer__contacts__mail hello@cash4sms.today
+
+            

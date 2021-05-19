@@ -1,0 +1,186 @@
+.initial-screen
+    padding: 20rem 0 20rem 0
+    &__center
+        width: 1297rem
+        margin: 0 auto
+    &__tiles
+        display: flex
+        align-items: stretch
+        align-content: stretch
+        justify-content: flex-start
+        flex-wrap: wrap
+        margin: 0 -15rem
+        &__left
+            width: 693rem
+            &__tile
+                overflow: hidden
+                height: 526rem
+                background: #DCF5FF
+                border-radius: 60rem
+                padding: 117rem 0 0 71rem
+                position: relative
+                &__center
+                    position: relative
+                    z-index: 2
+                &__cells
+                    position: absolute
+                    top: -149rem
+                    left: 0
+                    width: 759rem
+        &__headline
+            font-family: 'Dela Gothic One'
+            font-size: 48rem
+            line-height: 123.06%
+            color: #0D2842
+            margin: 0 0 46rem 0
+        &__trigger
+            border: none
+            padding: 22rem 50rem
+            background: #FFE03A
+            box-shadow: 0rem 25rem 38rem -10rem rgba(160, 210, 230, 0.31)
+            border-radius: 20rem
+            font-size: 18rem
+            display: inline-block
+            text-decoration: none
+            color: $c-black
+            transition: 0.1s
+            &:hover
+                background-color: #FFD130
+            &:active
+                background-color: #FFC329
+                box-shadow: 0rem 25rem 38rem -10rem rgba(160, 210, 230, 0)
+        &__right
+            width: calc(100% - 693rem)
+            padding: 0 0 0 30rem
+            display: flex
+            align-content: space-between
+            justify-content: flex-start
+            flex-wrap: wrap
+            min-height: 100%
+            &__tile
+                background: #DCF5FF
+                border-radius: 60rem
+                padding: 0 0 0 70rem
+                height: calc(50% - 14rem)
+                width: 100%
+                display: flex
+                align-items: center
+                align-content: center
+                justify-content: flex-start
+                position: relative
+                background-size: auto 100%
+                background-position: right bottom
+                background-repeat: no-repeat
+                &_1
+                    background-image: url('../img/initial-screen-background-tile-1.svg')
+                &_2
+                    background-image: url('../img/initial-screen-background-tile-2.svg')
+                &::after
+                    content: ""
+                    width: 30rem
+                    height: 1rem
+                    border-top: 2rem dashed #DCF5FF
+                    position: absolute
+                    top: 50%
+                    right: 100%
+                &:first-child::before
+                    content: ""
+                    height: 30rem
+                    width: 1rem
+                    border-left: 2rem dashed #DCF5FF
+                    position: absolute
+                    top: 100%
+                    right: 50%
+        &__subtitle
+            font-size: 25rem
+            line-height: 36rem
+            font-family: 'Dela Gothic One'
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .initial-screen
+        padding: 26rem 0 7rem 0
+        &__center
+            width: 714rem
+        &__tiles
+            &__left
+                width: 354rem
+                &__tile
+                    height: 289rem
+                    padding: 42rem 0 0 30rem
+                    border-radius: 40rem
+            &__headline
+                font-size: 30rem
+                margin: 0 0 35rem 0
+            &__trigger
+                padding: 19rem 35rem
+                font-size: 17rem
+            &__right
+                width: calc(100% - 354rem)
+                padding: 0 0 0 15rem
+                &__tile
+                    padding: 0 0 0 25rem
+                    border-radius: 40rem
+                    height: calc(50% - 7rem)
+            &__subtitle
+                font-size: 18rem
+                line-height: 26rem
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .initial-screen
+        &__center
+            width: 290rem
+        &__tiles
+            &__left
+                width: 100%
+                padding: 0 15rem
+                &__tile
+                    width: 100%
+                    height: auto
+                    padding: 35rem 35rem 49rem 35rem
+                    border-radius: 40rem
+                    &__center
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: center
+            &__headline
+                font-size: 25rem
+                line-height: 123.06%
+                text-align: center
+                width: 100%
+                margin: 0 0 29rem 0
+            &__trigger
+                padding: 13rem 28rem
+                font-size: 16rem
+                border-radius: 18rem
+            &__right
+                width: 100%
+                padding: 0 15rem
+                &__tile
+                    height: auto
+                    padding: 35rem 25rem
+                    margin: 19rem 0 0 0
+                    border-radius: 40rem
+                    min-height: 225rem
+                    background-position: center bottom
+                    background-size: 100% auto
+                    align-items: flex-start
+                    align-content: flex-start
+                    justify-content: center
+                    &_1
+                        background-image: url('../img/initial-screen-background-tile-mobile-1.svg?v-1')
+                    &_2
+                        background-image: url('../img/initial-screen-background-tile-mobile-2.svg?v-1')
+                    &::after
+                        content: ""
+                        width: 1rem
+                        height: 20rem
+                        border-right: 2rem dashed #DCF5FF
+                        border-top: none
+                        position: absolute
+                        bottom: 100%
+                        right: 50%
+                        top: auto
+                    &::before
+                        display: none
+            &__subtitle
+                font-size: 18rem
+                line-height: 26rem
+                text-align: center

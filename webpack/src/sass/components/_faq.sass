@@ -1,0 +1,126 @@
+.faq
+    padding: 50rem 0 51rem 0
+    &__center
+        width: 1228rem
+        margin: 0 auto
+    &__headline
+        margin: 0 0 38rem 0
+        font-weight: 500
+        font-size: 45rem
+        line-height: 1.28
+        padding: 0 29rem
+        font-family: 'Dela Gothic One'
+    &__question
+        padding: 20rem 29rem 25rem 29rem
+        cursor: pointer
+        background: #FFFFFF
+        box-shadow: 0rem 23rem 17rem -22rem rgba(6, 100, 140, 0.14)
+        border-radius: 8rem
+        margin: 0 0 16rem 0
+        &_hidden &__top
+            margin: 0 0 16rem 0
+        &__top
+            display: flex
+            align-items: center
+            align-content: center
+            justify-content: space-between
+            transition: 0.3s
+        &__headline
+            font-size: 22rem
+            line-height: 1.5
+            transition: .35s
+            &:hover
+                opacity: 0.7
+        &__open
+            width: 34rem
+            height: 34rem
+            min-width: 34rem
+            min-height: 34rem
+            border: 2.6rem solid #52CBFF
+            background: #52CBFF
+            border-radius: 50%
+            display: flex
+            align-items: center
+            align-content: center
+            justify-content: center
+            flex-wrap: wrap
+            margin: 0 0 0 24rem
+            transition: .35s
+            &:hover
+                background-color: transparent
+            &:active
+                background-color: #52CBFF
+                border: 2.6rem solid #52CBFF
+            &:hover:after,
+            &:hover:before
+                background-color: #52CBFF
+            &:after,
+            &:before
+                width: 16rem
+                content: ""
+                height: 2.6rem
+                background-color: #fff
+                display: block
+                transition: .35s
+                border-radius: 100rem
+            &:after
+                transform: translateY(-50%) rotate(90deg)
+            &:before
+                transform: translateY(50%)
+        &__answer
+            margin: 0
+            transition: .35s
+            overflow: hidden
+            &__text
+                font-size: 16rem
+                line-height: 140%
+                width: 80%
+        &_hidden &__open
+            &:after
+                transform: translateY(-50%) rotate(0deg)
+        &_hidden &__answer
+            margin: 8rem 0 0 0 
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .faq
+        padding: 28rem 0 0rem 0
+        &__center
+            width: 714rem
+        &__headline
+            margin: 0 0 29rem 0
+            font-size: 40rem
+            padding: 0
+        &__question
+            margin: 0 0 20rem 0
+            &__top
+                display: flex
+                align-items: center
+                align-content: center
+                justify-content: space-between
+            &_hidden &__top
+                margin: 0 0 10rem 0
+            &__headline
+                font-size: 20rem
+            &__answer
+                &__text
+                    width: 100%
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .faq
+        padding: 25rem 0 39rem 0
+        &__center
+            width: 304rem
+        &__headline
+            margin: 0 0 19rem 0
+            font-size: 28rem
+            line-height: 41rem
+            padding: 0 7rem
+        &__question
+            padding: 11rem 6rem 11rem 19rem
+            &__headline
+                font-size: 17rem
+                line-height: 25rem
+            &__open
+            &__answer
+                &__text
+                    font-size: 14rem
+                    line-height: 22rem
+                    width: 100%
