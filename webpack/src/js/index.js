@@ -1,4 +1,18 @@
 import "../sass/main.sass";
+let SmoothScroll = require("smooth-scroll");
+
+comment = `Плавный скролл по якорю"`
+  try {
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      speed: 500,
+      speedAsDuration: true,
+      offset: function (anchor, toggle) {
+        return 0; // 30
+      },
+    });
+  } catch (error) {
+    console.error(`Не работает: ${comment}`)
+  }
 
 
 let comment = `FAQ`
@@ -40,65 +54,194 @@ try {
 
 comment = `slides - how it works`
 try {
-    function runSlides(node) {
+    function runSlides(node, typeEvent) {
+        node.setAttribute('init', '1')
         let slides = node.querySelectorAll('[data-slides-slide]');
+        let info = node.querySelector('[data-info-slide]');
+        let dynamicHeight = node.querySelector('[data-dynamic-height]');
+        let leftTab = node.querySelector('[slide-left-tab]');
+        let rightTab = node.querySelector('[slide-right-tab]');
         let slidesLength = slides.length;
         let currentSlide = 0;
         let percent = 0;
-        for (let i = 0; i < slidesLength; i++) {
+        let height = 0;
+        let heights = [];
+        let otherCurrentSlide = 0;
+        let run = true;
+        leftTab.addEventListener('click', ()=>{
+          changeSlide('prev')
+        })
+        rightTab.addEventListener('click', ()=>{
+          changeSlide()
+        })
+        function setHeight() {
+          heights = []
+          info.style.transition = `0s`
+          info.style.height = `auto`
+          height = 0;
+          otherCurrentSlide = 0;
+          for (let i = 0; i < slidesLength; i++) {
             let attaches = node.querySelectorAll(`[data-attach-slide="${i}"]`);
             for (let ii = 0; ii < attaches.length; ii++) {
                 const attach = attaches[ii];
-                if (i > 0) {
-                    attach.style.display = "none";
-                }
+                attach.style.display = "none";
             }
+          }
+          for (let i = 0; i < slidesLength; i++) {
+              let attaches = node.querySelectorAll(`[data-attach-slide="${i}"]`);
+              for (let ii = 0; ii < attaches.length; ii++) {
+                const attach = attaches[ii];
+                if (otherCurrentSlide == i) {
+                  attach.style.display = "block";
+                } else {
+                  attach.style.display = "none";
+                }
+              }
+              otherCurrentSlide += 1;
+              heights.push(info.offsetHeight)
+              if (height < info.offsetHeight) {
+                height = info.offsetHeight
+              }
+              for (let ii = 0; ii < attaches.length; ii++) {
+                const attach = attaches[ii];
+                attach.style.display = "none";
+              }
+          }
+          for (let i = 0; i < slidesLength; i++) {
+              let attaches = node.querySelectorAll(`[data-attach-slide="${i}"]`);
+              for (let ii = 0; ii < attaches.length; ii++) {
+                const attach = attaches[ii];
+                if (i == currentSlide) {
+                  attach.style.display = "block";
+                }
+              }
+          }
+          info.style.height = `${height}px`
+          dynamicHeight.style.height = `${heights[currentSlide]}px`
+        }
+        setHeight()
+        window.addEventListener("resize", function() {
+          setHeight()
+        });
+        let startPositionX = 0;
+        let endPositionX = 0;
+        let arrow = "";
+        let currentAttaches = node.querySelectorAll(`[data-attach-slide="${currentSlide}"]`);
+        node.addEventListener('touchstart', (event)=>{
+          currentAttaches = node.querySelectorAll(`[data-attach-slide="${currentSlide}"]`);
+          run = false;
+          startPositionX = event.touches[0].clientX;
+          endPositionX = event.touches[0].clientX;
+        })
+        node.addEventListener('touchmove', (event)=>{
+          if (startPositionX > event.touches[0].clientX) {
+            arrow = 'next'
+          } else {
+            arrow = 'prev'
+          }
+          endPositionX = event.touches[0].clientX;
+          for (let i = 0; i < currentAttaches.length; i++) {
+              const attach = currentAttaches[i];
+              attach.style.transition = "0s";
+              attach.style.transform = `translateX(${(endPositionX - startPositionX) * .25}rem)`;
+          }
+        })
+        node.addEventListener('touchend', (event)=>{
+          run = true;
+          if (Math.abs(endPositionX - startPositionX) > 30) {
+            changeSlide(arrow)
+          } else {
+            let attaches = node.querySelectorAll(`[data-attach-slide="${currentSlide}"]`);
+            for (let i = 0; i < attaches.length; i++) {
+                const attach = attaches[i];
+                attach.style.transition = "0.3s";
+                attach.style.transform = `translateX(0rem)`;
+            }
+          }
+        })
+        function changeSlide(arrow) {
+          percent = 0;
+          let attaches = node.querySelectorAll(`[data-attach-slide="${currentSlide}"]`);
+          for (let i = 0; i < attaches.length; i++) {
+              const attach = attaches[i];
+              if (arrow == 'prev') {
+                attach.style.transform = "translateX(0rem)";
+                attach.style.opacity = "1";
+                attach.style.transition = "0.3s";
+                attach.style.transform = "translateX(40rem)";
+              } else {
+                attach.style.transform = "translateX(0rem)";
+                attach.style.opacity = "1";
+                attach.style.transition = "0.3s";
+                attach.style.transform = "translateX(-40rem)";
+              }
+              attach.style.opacity = "0";
+              setTimeout(()=>{
+                  attach.style.display = "none";
+              }, 300)
+          }
+          setTimeout(()=>{
+              let newAttaches = node.querySelectorAll(`[data-attach-slide="${currentSlide}"]`);
+              for (let i = 0; i < newAttaches.length; i++) {
+                  const attach = newAttaches[i];
+                  attach.style.display = "block";
+                  if (arrow == 'prev') {
+                    attach.style.transform = "translateX(-40rem)";
+                    attach.style.transition = "0.2s";
+                    attach.style.opacity = "0";
+                    setTimeout(()=>{
+                        attach.style.transform = "translateX(0rem)";
+                        attach.style.opacity = "1";
+                    }, 100)
+                  } else {
+                    attach.style.transform = "translateX(40rem)";
+                    attach.style.transition = "0.2s";
+                    attach.style.opacity = "0";
+                    setTimeout(()=>{
+                        attach.style.transform = "translateX(0rem)";
+                        attach.style.opacity = "1";
+                    }, 100)
+                    
+                  }
+              }
+              dynamicHeight.style.height = `${heights[currentSlide]}px`
+          }, 300)
+
+          if (arrow == 'prev') {
+            if (currentSlide == 0) {
+              currentSlide = slidesLength - 1;
+            } else {
+                --currentSlide
+            }
+          } else {
+            if (currentSlide >= slidesLength - 1) {
+                currentSlide = 0;
+            } else {
+                ++currentSlide
+            }
+          }
+
+          for (let i = 0; i < slides.length; i++) {
+            const slide = slides[i];
+            slide.querySelector('[data-slides-slide-percent]').style.width = `${0}%`;
+          }
+          for (let i = 0; i < slides.length; i++) {
+            const slide = slides[i];
+            if (i <= currentSlide - 1) {
+              slide.querySelector('[data-slides-slide-percent]').style.width = `${100}%`;
+            }
+          }
         }
         function changePercent() {
             render();
             if (percent > 99) {
                 percent = 0;
 
-                let attaches = node.querySelectorAll(`[data-attach-slide="${currentSlide}"]`);
-                for (let i = 0; i < attaches.length; i++) {
-                    const attach = attaches[i];
-                    attach.style.transform = "translateX(0rem)";
-                    attach.style.opacity = "1";
-                    attach.style.transition = "0.3s";
-                    attach.style.transform = "translateX(40rem)";
-                    attach.style.opacity = "0";
-                    setTimeout(()=>{
-                        attach.style.display = "none";
-                    }, 300)
-                }
-                setTimeout(()=>{
-                    let newAttaches = node.querySelectorAll(`[data-attach-slide="${currentSlide}"]`);
-                    for (let i = 0; i < newAttaches.length; i++) {
-                        const attach = newAttaches[i];
-                        attach.style.display = "block";
-                        attach.style.transform = "translateX(-40rem)";
-                        attach.style.transition = "0.2s";
-                        attach.style.opacity = "0";
-                        setTimeout(()=>{
-                            attach.style.transform = "translateX(0rem)";
-                            attach.style.opacity = "1";
-                        }, 100)
-                    }
-                }, 300)
-
-                if (currentSlide >= slidesLength - 1) {
-                    for (let i = 0; i < slides.length; i++) {
-                      const slide = slides[i];
-                      slide.querySelector('[data-slides-slide-percent]').style.width = `${0}%`;
-                    }
-                    currentSlide = 0;
-                } else {
-                    ++currentSlide
-                }
-
-
+                changeSlide()
             } else {
-                percent += 0.6;
+                if (run) {
+                  percent += 0.6;
+                }
             }
             requestAnimationFrame(changePercent)
         }
@@ -110,7 +253,34 @@ try {
 
     let slidesNode = document.querySelectorAll('.how-it-works__block');
     for (let i = 0; i < slidesNode.length; i++) {
-        runSlides(slidesNode[i])
+      let currentNode = slidesNode[i];
+        function scrollInitSlide(typeEvent) {
+          // Если страница открывается и проскроленно больше 100 пикселей, то порядок анимаций не будет(т.е. элементы не друг за другом открвываются  с задержкой)
+          let windowScrollY = window.scrollY;
+          if (windowScrollY > 100) {
+            typeEvent = "scroll"
+          }
+          let windowInnerHeight = window.innerHeight;
+          let offsetanimationTopOfWindow = currentNode.getBoundingClientRect().top;
+          let percentOffsetanimationTopOfWindow = Math.floor(offsetanimationTopOfWindow / windowInnerHeight * 100);
+          // Ели страница открывается, то показываются все элементы в области экрана. А при скролле анимируется только 75% от верха страницы, чтобы пользователь успел увидеть анимацию 
+          let percentOfAnimationanimation = typeEvent == "scroll" ? 85 : 98;
+          if (windowScrollY + windowInnerHeight > document.querySelector("body").getBoundingClientRect().height - 100) {
+            percentOfAnimationanimation = 100
+          }
+          if (percentOffsetanimationTopOfWindow < percentOfAnimationanimation) {
+            if (!currentNode.getAttribute('init')) {
+              runSlides(currentNode)
+            }
+          }
+        }
+        window.addEventListener("scroll", function() {
+          scrollInitSlide("scroll")
+        });
+        window.addEventListener("optimizedResize", function() {
+          scrollInitSlide("scroll")
+        });
+        scrollInitSlide("load")
     }
 } catch (error) {
     console.error(`${error}`)

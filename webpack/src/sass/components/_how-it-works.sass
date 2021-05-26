@@ -1,5 +1,7 @@
 .how-it-works
     padding: 70rem 0 70rem 0
+    [data-attach-slide]
+        will-change: transform
     &__center
         width: 1170rem
         margin: 0 auto
@@ -21,9 +23,18 @@
         justify-content: space-between
         flex-wrap: wrap
         margin: 0 -20rem
+        &__dynamic-height
+            display: flex
+            align-content: space-between
+            justify-content: flex-start
+            flex-wrap: wrap
+            transition: 0.3s
+            &__top,
+            &__bottom
+                width: 100%
+        &__arrows-mobile
+            position: absolute
         &__illustration
-            height: 440rem
-            width: 50%
             padding: 0 20rem
             background-repeat: no-repeat
             background-position: center
@@ -33,13 +44,14 @@
             align-items: center
             justify-content: center
             max-height: 50%
+            width: 45%
             &_1
+                height: 405rem
+            &_2
+                height: 443rem
             &__picture
                 display: block
-                &_1
-                    width: 43%
-                &_2
-                    width: 47%
+                height: 100%
         &__info
             width: 43%
         &__headline
@@ -57,6 +69,7 @@
             line-height: 140%
             margin: 0 0 34rem 0
         &__slides
+            display: flex
             &__slide
                 height: 10rem
                 width: 70rem
@@ -65,6 +78,8 @@
                 margin: 0 8rem 0 0
                 display: inline-block
                 overflow: hidden
+                &:last-child
+                    margin: 0
                 &__percent
                     height: 100%
                     width: 0%
@@ -123,6 +138,26 @@
             order: 2
         &__block
             margin: 0 0 76rem
+            position: relative
+            &__arrows-mobile
+                position: absolute
+                height: 100%
+                width: 100%
+                left: 0
+                top: 0
+                z-index: 10
+                display: flex
+                &__left,
+                &__right
+                    height: 100%
+                    top: 0
+                    bottom: 0
+                    width: 50%
+                    // border: 1px solid #000
+                &__left
+                    left: 0
+                &__right
+                    right: 0
             &:last-child
                 margin: 0
             &__illustration
@@ -144,6 +179,7 @@
                 font-size: 15rem
                 line-height: 140%
             &__slides
+                display: flex
                 &__slide
                     width: 53rem
                     &__percent

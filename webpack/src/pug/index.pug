@@ -29,40 +29,6 @@ block seo
 block content
     include ./includes/header.pug
     +header()
-    header.header
-        .header__center
-            .header__side
-                a(
-                    animation
-                    animation-arrow="bottom"
-                    href="#"
-                ).header__logo
-                    img(src=`${url}assets/img/logo.svg`).header__logo__picture
-            .header__side
-                div(
-                    animation
-                    animation-arrow="bottom"
-                ).header__links
-                    a(href=`${url}`).header__links__link Blog
-                    a(href=`${url}`).header__links__link FAQ
-                a(
-                    animation
-                    animation-arrow="bottom"
-                    href=`https://play.google.com/store/apps/details?id=com.cash4sms.android`
-                ).header__install Install the app
-                .header__burger
-                    div(
-                        animation
-                        animation-arrow="bottom"
-                    ).header__burger__lines
-                        .header__burger__lines__line
-                        .header__burger__menu
-                            <svg class="header__burger__menu__corner"  viewBox="0 0 13 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.5 0.5L0 6H13L6.5 0.5Z" fill="white"/>
-                            </svg>
-                            a(href=`${url}`).header__burger__menu__link Blog
-                            a(href=`${url}`).header__burger__menu__link FAQ
-                    .header__burger__back
     section.initial-screen
         .initial-screen__center
             .initial-screen__tiles
@@ -152,70 +118,171 @@ block content
                             ).possibilities__possibility__description Check if your mobile plan includes SMS outside of your country
     section.how-it-works
         .how-it-works__center
-            h2.how-it-works__headline How It Works
+            h2(
+                animation
+            ).how-it-works__headline How It Works
             .how-it-works__blocks
-                .how-it-works__block
+                div(
+                    animation
+                ).how-it-works__block
+                    .how-it-works__block__arrows-mobile
+                        div(
+                            slide-left-tab
+                        ).how-it-works__block__arrows-mobile__left
+                        div(
+                            slide-right-tab
+                        ).how-it-works__block__arrows-mobile__right
                     div(
                         animation
                     ).how-it-works__block__illustration.how-it-works__block__illustration_1
                         img(data-attach-slide="0" src=`${url}assets/img/how-it-works-illustration-1.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
-                        img(data-attach-slide="1" src=`${url}assets/img/how-it-works-illustration-2.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
+                        img(data-attach-slide="1" src=`${url}assets/img/how-it-works-illustration-2.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_2
+                        img(data-attach-slide="2" src=`${url}assets/img/how-it-works-illustration-3.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_3
+                        img(data-attach-slide="3" src=`${url}assets/img/how-it-works-illustration-4.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_4
+                        img(data-attach-slide="4" src=`${url}assets/img/how-it-works-illustration-5.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_5
                     div(
-                        animation
+                        data-info-slide
                     ).how-it-works__block__info
-                        h3(data-attach-slide="0").how-it-works__block__headline Outgoing SMS
-                        p(data-attach-slide="0").how-it-works__block__description We will be sending your SMS to different countries: UK, Latvia, Taiwan will be sending your SMS to different countries: UK, Latvia, Taiwan 
-                        p(data-attach-slide="0").how-it-works__block__note Check if your mobile plan includes SMS outside of your country
-
-                        h3(data-attach-slide="1").how-it-works__block__headline Incoming SMS
-                        p(data-attach-slide="1").how-it-works__block__description What is incoming sms?
-                        p(data-attach-slide="1").how-it-works__block__note We will send you SMS with random text and numbers. If you receive these SMS. it means that the SMS channel is working perfectly fine on your end
                         div(
-                            data-slides
-                        ).how-it-works__block__slides
-                            div(
-                                data-slides-slide
-                            ).how-it-works__block__slides__slide
+                            data-dynamic-height
+                        ).how-it-works__block__dynamic-height
+                            div.how-it-works__block__dynamic-height__top
+                                h3.how-it-works__block__headline Outgoing SMS
+
+                                p(data-attach-slide="0").how-it-works__block__description We will be sending your SMS to different countries: UK, Latvia, Taiwan 
+                                p(data-attach-slide="0").how-it-works__block__note Check if your mobile plan includes SMS outside of your country
+
+                                p(data-attach-slide="1").how-it-works__block__description We have a dynamic payout system. For some SMS we pay 0.5 Eurocents, for others up to 3 Eurocents
+                                p(data-attach-slide="1").how-it-works__block__note It depends on the access your mobile carrier has.  
+
+                                p(data-attach-slide="2").how-it-works__block__description You must have access in order to use our app. To know if you have access we will run an access test
+                                p(data-attach-slide="2").how-it-works__block__note What is an access test? 
+                                
+                                p(data-attach-slide="3").how-it-works__block__description If we receive any of your SMS during the access test — you are welcome to use Cash4SMS.
+                                p(data-attach-slide="3").how-it-works__block__note  If you see "Service unavailable" it means that we haven't received any SMS from you and you can't use our service at the moment. Try earning with Incoming SMS  
+                                
+                                p(data-attach-slide="4").how-it-works__block__description Payments are made in the first week of every month
+                                p(data-attach-slide="4").how-it-works__block__note If the amount is more than €5, then you can request an individual payment 
+                            div.how-it-works__block__dynamic-height__bottom
                                 div(
-                                    data-slides-slide-percent
-                                ).how-it-works__block__slides__slide__percent
-                            div(
-                                data-slides-slide
-                            ).how-it-works__block__slides__slide
-                                div(
-                                    data-slides-slide-percent
-                                ).how-it-works__block__slides__slide__percent
-                .how-it-works__block
+                                    data-slides
+                                ).how-it-works__block__slides
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                div(
+                    animation
+                ).how-it-works__block
+                    .how-it-works__block__arrows-mobile
+                        div(
+                            slide-left-tab
+                        ).how-it-works__block__arrows-mobile__left
+                        div(
+                            slide-right-tab
+                        ).how-it-works__block__arrows-mobile__right
                     div(
                         animation
                     ).how-it-works__block__illustration.how-it-works__block__illustration_1
-                        img(data-attach-slide="0" src=`${url}assets/img/how-it-works-illustration-2.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
-                        img(data-attach-slide="1" src=`${url}assets/img/how-it-works-illustration-1.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_1
+                        img(data-attach-slide="0" src=`${url}assets/img/how-it-works-illustration-6.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_6
+                        img(data-attach-slide="1" src=`${url}assets/img/how-it-works-illustration-7.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_7
+                        img(data-attach-slide="2" src=`${url}assets/img/how-it-works-illustration-8.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_8
+                        img(data-attach-slide="3" src=`${url}assets/img/how-it-works-illustration-9.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_9
+                        img(data-attach-slide="4" src=`${url}assets/img/how-it-works-illustration-10.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_10
+                        img(data-attach-slide="5" src=`${url}assets/img/how-it-works-illustration-11.svg`).how-it-works__block__illustration__picture.how-it-works__block__illustration__picture_11
                     div(
-                        animation
+                        data-info-slide
                     ).how-it-works__block__info
-                        h3(data-attach-slide="0").how-it-works__block__headline Incoming SMS
-                        p(data-attach-slide="0").how-it-works__block__description What is incoming sms?
-                        p(data-attach-slide="0").how-it-works__block__note We will send you SMS with random text and numbers. If you receive these SMS. it means that the SMS channel is working perfectly fine on your end
-
-                        h3(data-attach-slide="1").how-it-works__block__headline Outgoing SMS
-                        p(data-attach-slide="1").how-it-works__block__description We will be sending your SMS to different countries: UK, Latvia, Taiwan 
-                        p(data-attach-slide="1").how-it-works__block__note Check if your mobile plan includes SMS outside of your country
                         div(
-                            data-slides
-                        ).how-it-works__block__slides
-                            div(
-                                data-slides-slide
-                            ).how-it-works__block__slides__slide
+                            data-dynamic-height
+                        ).how-it-works__block__dynamic-height
+                            div.how-it-works__block__dynamic-height__top
+                                h3.how-it-works__block__headline Incoming SMS
+
+                                p(data-attach-slide="0").how-it-works__block__description What is incoming sms?
+                                p(data-attach-slide="0").how-it-works__block__note We will send you SMS with random text and numbers. If you receive these SMS. it means that the SMS channel is working perfectly fine on your end
+
+                                p(data-attach-slide="1").how-it-works__block__description What are they needed for?
+                                p(data-attach-slide="1").how-it-works__block__note Content providers and integrators need to test SMS channels all over the world and learn how stable are they 
+
+                                p(data-attach-slide="2").how-it-works__block__description Turn on the Internet for incoming SMS
+                                p(data-attach-slide="2").how-it-works__block__note First of all☝️ Make sure your internet connection is active for the app to count all of the SMS that your phone received from us We 
+                                
+                                p(data-attach-slide="3").how-it-works__block__description What about payment?
+                                p(data-attach-slide="3").how-it-works__block__note We will be paying 2 Eurocents for each SMS that you receive from us 
+                                
+                                p(data-attach-slide="4").how-it-works__block__description Get money through PayPal
+                                p(data-attach-slide="4").how-it-works__block__note In order to receive your payment you need to fill in the PayPal form before you initiate the Incoming SMS. Follow the system's comments 
+                                
+                                p(data-attach-slide="5").how-it-works__block__description Enable all permissions to read sms
+                                p(data-attach-slide="5").how-it-works__block__note In order to start receiving SMS and get paid you have to enable all the permissions to read SMS by Cash4SMS 
+                                
+                            div.how-it-works__block__dynamic-height__bottom
                                 div(
-                                    data-slides-slide-percent
-                                ).how-it-works__block__slides__slide__percent
-                            div(
-                                data-slides-slide
-                            ).how-it-works__block__slides__slide
-                                div(
-                                    data-slides-slide-percent
-                                ).how-it-works__block__slides__slide__percent
+                                    data-slides
+                                ).how-it-works__block__slides
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
+                                    div(
+                                        data-slides-slide
+                                    ).how-it-works__block__slides__slide
+                                        div(
+                                            data-slides-slide-percent
+                                        ).how-it-works__block__slides__slide__percent
     section.important-things
         .important-things__center
             div(
@@ -302,9 +369,9 @@ block content
                         ).reviews__review
                             .reviews__review__head
                                 .reviews__review__avatar.reviews__review__avatar_2
-                                    .reviews__review__letters D
+                                    .reviews__review__letters S
                                 .reviews__review__info
-                                    p.reviews__review__name DarketXY
+                                    p.reviews__review__name Steven Shüler
                                     .reviews__review__info__bottom
                                         .reviews__review__stars
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
@@ -312,8 +379,8 @@ block content
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
-                                        p.reviews__review__date Feb 1, 2021
-                            p.reviews__review__description  This app is amazing. Its been running for me over 3 months and I have made over $150. The support is very helpful. I would love to see a "Cashout" button in the next updates.
+                                        p.reviews__review__date Apr 18, 2021
+                            p.reviews__review__description  I've been using this app for over 1 year and I'm more than satisfied. The money is automatically paid out to the PayPal account. I can only recommend this app if you have an "International SMS flat". 💸 Flat-International 💸
                     .reviews__columns__column
                         div(
                             animation
@@ -323,7 +390,7 @@ block content
                                 .reviews__review__avatar.reviews__review__avatar_3
                                     .reviews__review__letters D
                                 .reviews__review__info
-                                    p.reviews__review__name Angelique Elijah
+                                    p.reviews__review__name DarketXY
                                     .reviews__review__info__bottom
                                         .reviews__review__stars
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
@@ -341,7 +408,7 @@ block content
                                 .reviews__review__avatar.reviews__review__avatar_4
                                     .reviews__review__letters A
                                 .reviews__review__info
-                                    p.reviews__review__name Duke Durham
+                                    p.reviews__review__name Angelique Elijah
                                     .reviews__review__info__bottom
                                         .reviews__review__stars
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
@@ -349,80 +416,43 @@ block content
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
                                             img(src=`${url}assets/img/star.svg`).reviews__review__star
-                                        p.reviews__review__date Jan 20, 2021
-                            p.reviews__review__description his has to be one of my favorite money making apps. It's fast, easy to use, has a low payout threshold, and quickly pays out to your PayPal account. I have had the app for about a month and have withdrawn 5 times and received the automatic monthly payment 1 time, for a total of 6 payouts. As for people complaining about it "taking their money" the app clearly states when you are setting it up that it uses intl text credits, if you don't have intl unlimited plan I wouldn't recommend using it.
+                                        p.reviews__review__date Mar 13, 2021
+                            p.reviews__review__description His has to be one of my favorite money making apps. It's fast, easy to use, has a low payout threshold, and quickly pays out to your PayPal account. I have had the app for about a month and have withdrawn 5 times and received the automatic monthly payment 1 time, for a total of 6 payouts. As for people complaining about it "taking their money" the app clearly states when you are setting it up that it uses intl text credits, if you don't have intl unlimited plan I wouldn't recommend using it.
     section(
-        class=`faq`
+        class=`faq-section`
     )
-        .faq__center
+        .faq-section__center
             h2(
                 animation
                 animation-arrow="bottom"
-            ).faq__headline Questions <br class="br br_mobile">& Answers
-            .faq__questions
-                div(
-                    animation
-                    animation-arrow="bottom"
-                ).faq__question
-                    .faq__question__top
-                        p(
-                        ).faq__question__headline What is the main goal of Cash4SMS?
-                        div(
-                        ).faq__question__open
-                    div.faq__question__answer 
-                        p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
-                div(
-                    animation
-                    animation-arrow="bottom"
-                ).faq__question
-                    .faq__question__top
-                        p(
-                        ).faq__question__headline Which mobile operating systems does Cash4SMS support?
-                        div(
-                        ).faq__question__open
-                    div.faq__question__answer 
-                        p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
-    +startEarning()
-    footer(
-        animation
-    ).footer
-        .footer__center
-            .footer__columns
-                .footer__columns__left
-                    p(
+            ).faq-section__headline Questions <br class="br br_mobile">& Answers
+            .faq
+                .faq__questions
+                    div(
                         animation
                         animation-arrow="bottom"
-                    ).footer__copyright © 2021 cash4sms. All rights reserved.
-                    .footer__links
-                        a(
-                            animation
-                            animation-arrow="bottom"
-                            href=`#`
-                        ).footer__links__link Privacy Policy
-                        a(
-                            animation
-                            animation-arrow="bottom"
-                            href=`#`
-                        ).footer__links__link Cookie Policy
-                        a(
-                            animation
-                            animation-arrow="bottom"
-                            href=`#`
-                        ).footer__links__link Terms of Use
-                .footer__columns__right
-                    .footer__contacts
-                        p(
-                            animation
-                            animation-arrow="bottom"
-                        ).footer__contacts__headline Contact Us
-                        p(
-                            animation
-                            animation-arrow="bottom"
-                        ).footer__contacts__description We’d love to hear from you and answer any <br class="br br_tablet">questions you might have.
-                        a(
-                            animation
-                            animation-arrow="bottom"
-                            href="mailto:hello@cash4sms.today"
-                        ).footer__contacts__mail hello@cash4sms.today
+                    ).faq__question
+                        .faq__question__top
+                            p(
+                            ).faq__question__headline What is the main goal of Cash4SMS?
+                            div(
+                            ).faq__question__open
+                        div.faq__question__answer 
+                            p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+                    div(
+                        animation
+                        animation-arrow="bottom"
+                    ).faq__question
+                        .faq__question__top
+                            p(
+                            ).faq__question__headline Which mobile operating systems does Cash4SMS support?
+                            div(
+                            ).faq__question__open
+                        div.faq__question__answer 
+                            p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+    +startEarning()
+    include ./includes/footer.pug
+    +footer()
+    
 
             

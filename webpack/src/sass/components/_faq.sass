@@ -1,15 +1,4 @@
 .faq
-    padding: 50rem 0 51rem 0
-    &__center
-        width: 1228rem
-        margin: 0 auto
-    &__headline
-        margin: 0 0 38rem 0
-        font-weight: 500
-        font-size: 45rem
-        line-height: 1.28
-        padding: 0 29rem
-        font-family: 'Dela Gothic One'
     &__question
         padding: 20rem 29rem 25rem 29rem
         cursor: pointer
@@ -29,8 +18,15 @@
             font-size: 22rem
             line-height: 1.5
             transition: .35s
+            font-weight: 500
             &:hover
                 opacity: 0.7
+        &:hover &__open
+            background: #20C5F9
+            border: 2.6rem solid #20C5F9
+        &_hidden:hover &__open
+            background-color: transparent
+            border: 1.6rem solid #52CBFF
         &__open
             width: 34rem
             height: 34rem
@@ -46,14 +42,9 @@
             flex-wrap: wrap
             margin: 0 0 0 24rem
             transition: .35s
-            &:hover
-                background-color: transparent
             &:active
-                background-color: #52CBFF
-                border: 2.6rem solid #52CBFF
-            &:hover:after,
-            &:hover:before
-                background-color: #52CBFF
+                background-color: #17AFDF
+                border: 2.6rem solid #17AFDF
             &:after,
             &:before
                 width: 16rem
@@ -78,17 +69,17 @@
         &_hidden &__open
             &:after
                 transform: translateY(-50%) rotate(0deg)
+        &_hidden &__open
+            background-color: transparent
+            border: 1.6rem solid #52CBFF
+            &:before,
+            &:after
+                height: 1.6rem
+                background-color: #52CBFF
         &_hidden &__answer
             margin: 8rem 0 0 0 
 @media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
     .faq
-        padding: 28rem 0 0rem 0
-        &__center
-            width: 714rem
-        &__headline
-            margin: 0 0 29rem 0
-            font-size: 40rem
-            padding: 0
         &__question
             margin: 0 0 20rem 0
             &__top
@@ -105,14 +96,6 @@
                     width: 100%
 @media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
     .faq
-        padding: 25rem 0 39rem 0
-        &__center
-            width: 304rem
-        &__headline
-            margin: 0 0 19rem 0
-            font-size: 28rem
-            line-height: 41rem
-            padding: 0 7rem
         &__question
             padding: 11rem 6rem 11rem 19rem
             &__headline

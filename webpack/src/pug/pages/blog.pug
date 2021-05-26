@@ -29,3 +29,45 @@ block seo
 block content
     include ../includes/header.pug
     +header()
+    .blog
+        h1(
+            animation
+            animation-arrow="bottom"
+        ).blog__headline Blog
+        a(
+            href=`${url}article`
+            animation
+            animation-arrow="bottom"
+        ).blog__big-news
+            img(src=`${url}assets/img/blog-big-news-image.png`).blog__big-news__image.blog__big-news__image_desktop
+            img(src=`${url}assets/img/blog-big-news-image-mobile.jpg`).blog__big-news__image.blog__big-news__image_mobile
+            img(src=`${url}assets/img/blog-big-news-fon.svg`).blog__big-news__fon.blog__big-news__fon_desktop
+            img(src=`${url}assets/img/blog-big-news-fon-mobile.svg`).blog__big-news__fon.blog__big-news__fon_mobile
+            div.blog__big-news__info
+                span.blog__big-news__info__date 17 January 2020
+                span.blog__big-news__info__hedline Best Birdchain Alternative in 2020
+                span.blog__big-news__info__description Check out the best Birdchain alternative - Cash4SMS reward app. Try it for free <br class="br br_desktop"> to earn money from your smartphone without much effort.
+        .blog__articles
+            a(href=`${url}article`
+                animation
+                animation-arrow="bottom"
+                ).blog__article
+                span.blog__article__left
+                    span.blog__article__preview
+                        img(src=`${url}assets/tmp/1.jpg`).blog__article__preview__picture
+                span.blog__article__right
+                    span.blog__article__date 19 May 2020
+                    span.blog__article__headline CASH4SMS at the FIAERC 2020
+                    span.blog__article__description Cash4SMS will be in the FIA ERC 2020, supporting rally pilot Feofanov’s crew in the championship races.
+            a(href=`${url}article`
+                animation
+                animation-arrow="bottom").blog__article
+                span.blog__article__left
+                    span.blog__article__preview
+                        img(src=`${url}assets/tmp/2.jpg`).blog__article__preview__picture
+                span.blog__article__right
+                    span.blog__article__date 31 March 2020
+                    span.blog__article__headline Cash4SMS Terms and Conditions changes
+                    span.blog__article__description Dear Users! Please, pay attention to the information below. Starting April 1, 2020, Cash4SMS Terms and Conditions will be changed.
+    include ../includes/footer.pug
+    +footer()

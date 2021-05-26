@@ -1,0 +1,127 @@
+extends ../includes/template.pug
+
+block seo
+    -
+        let title = '' 
+        let description = '' 
+
+    title !{title}
+    meta(
+        name="description"
+        property="og:description" 
+        content=`${description}`
+    )
+    <meta name="keywords"       content="" />
+
+    meta(
+        property="og:title"
+        content=`${title}`
+    )
+    meta(
+        name="twitter:description"
+        content=`${description}`
+    )
+    meta(
+        name="twitter:title"
+        content=`${title}`
+    )
+
+block content
+    include ../includes/header.pug
+    +header()
+    .faq-page
+        .faq-page__center
+            div(
+                animation
+                animation-arrow="bottom"
+            )#bread-crumbs.bread-crumbs.faq-page__bread-crumbs
+                ul
+                    li.bread-crumbs__crumb
+                        a( href="/") Main
+                    li.bread-crumbs__crumb FAQ
+            div(
+                animation
+                animation-arrow="bottom").faq-page__cover
+                img(
+                    src=`${url}assets/img/faq-page-background.svg`
+                ).faq-page__cover__background.faq-page__cover__background_desktop
+                img(
+                    src=`${url}assets/img/faq-page-background-mobile.svg`
+                ).faq-page__cover__background.faq-page__cover__background_mobile
+                img(
+                    src=`${url}assets/img/faq-page-illustration.svg`
+                ).faq-page__cover__illustration.faq-page__cover__illustration_desktop
+                img(
+                    src=`${url}assets/img/faq-page-illustration-mobile.svg`
+                ).faq-page__cover__illustration.faq-page__cover__illustration_mobile
+                .faq-page__cover__info
+                    h1.faq-page__cover__headline FAQ
+                    p.faq-page__cover__description Find out the answers<br class="br br_mobile"> to the<br class="br br_tablet"> most asked<br class="br br_mobile"> questions
+                    a(
+                        href="#faq-page__subtitle__anchor_1"
+                    ).faq-page__cover__target Find out
+            .faq-page__sections
+                .faq-page__section
+                    p(
+
+                        animation
+                        animation-arrow="bottom"
+                    ).faq-page__subtitle How do incoming SMS work
+                        span.faq-page__subtitle__anchor#faq-page__subtitle__anchor_1
+                    .faq
+                        .faq__questions
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline What is the main goal of Cash4SMS?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline Which mobile operating systems does Cash4SMS support?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+                .faq-page__section
+                    p(
+
+                        animation
+                        animation-arrow="bottom"
+                    ).faq-page__subtitle How do outgoing SMS work
+                    .faq
+                        .faq__questions
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline What is the main goal of Cash4SMS?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline Which mobile operating systems does Cash4SMS support?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+        
+    include ../includes/footer.pug
+    +footer()

@@ -1,0 +1,32 @@
+.faq-section
+    padding: 50rem 0 51rem 0
+    &__center
+        width: 1228rem
+        margin: 0 auto
+    &__headline
+        margin: 0 0 38rem 0
+        font-weight: 500
+        font-size: 45rem
+        line-height: 1.28
+        padding: 0 29rem
+        font-family: 'Dela Gothic One'
+
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .faq-section
+        padding: 28rem 0 0rem 0
+        &__center
+            width: 714rem
+        &__headline
+            margin: 0 0 29rem 0
+            font-size: 40rem
+            padding: 0
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .faq-section
+        padding: 25rem 0 39rem 0
+        &__center
+            width: 304rem
+        &__headline
+            margin: 0 0 19rem 0
+            font-size: 28rem
+            line-height: 41rem
+            padding: 0 7rem

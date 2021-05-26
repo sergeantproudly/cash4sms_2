@@ -1,0 +1,227 @@
+.blog
+    padding: 21rem 0 41rem 0
+    &__headline
+        font-size: 45rem
+        line-height: 66rem
+        margin: 0 auto 32rem auto
+        width: 1170rem
+        font-family: 'Dela Gothic One'
+    &__big-news
+        width: 1292rem
+        height: 314rem
+        margin: 0 auto 86rem auto
+        position: relative
+        display: block
+        color: inherit
+        text-decoration: none
+        &::after
+            background: linear-gradient(223.59deg, rgba(220, 245, 255, 0) 1.76%, #DCF5FF 44.41%)
+            position: absolute
+            left: -1rem
+            top: -1rem
+            bottom: -1rem
+            right: -1rem
+            z-index: 2
+            content: ""
+            width: calc(100% + 2rem)
+            height: calc(100% + 2rem)
+        &__image
+            position: absolute
+            left: 0
+            top: 0
+            bottom: 0
+            right: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            &_desktop
+            &_mobile
+                display: none
+        &__fon
+            position: absolute
+            left: -1rem
+            top: -1rem
+            bottom: -1rem
+            right: -1rem
+            z-index: 3
+            width: calc(100% + 2rem)
+            height: calc(100% + 2rem)
+            &_desktop
+            &_mobile
+                display: none
+        &__info
+            position: relative
+            z-index: 4
+            padding: 82rem 61rem 0rem 61rem
+            display: block
+            &__date
+                margin: 0 0 3rem 0
+                font-size: 14rem
+                color: #8B9298
+                display: block
+            &__hedline
+                font-size: 35rem
+                margin: 0 0 33rem 0
+                font-family: 'Dela Gothic One'
+                display: block
+            &__description
+                font-size: 18rem
+                line-height: 27rem
+                display: block
+    &__articles
+        margin: 0 auto 0rem auto
+        width: 1116rem
+    &__article
+        display: flex
+        align-items: center
+        align-content: center
+        justify-content: flex-start
+        flex-wrap: wrap
+        color: inherit
+        margin: 0 0 80rem 0
+        text-decoration: none
+        &:last-child
+            margin: 0
+        &__left
+            width: 40%
+            display: block
+        &__right
+            width: 60%
+            padding: 0 0 0 50rem
+            display: block
+        &:nth-child(odd) &__preview::after
+            background-image: url('../img/article-fon-1.svg')
+        &:nth-child(even) &__preview::after
+            background-image: url('../img/article-fon-2.svg')
+        &__preview
+            height: 215rem
+            display: block
+            position: relative
+            &::after
+                background-image: url('../img/article-fon-1.svg')
+                background-size: 100% 100%
+                background-repeat: no-repeat
+                position: absolute
+                left: -1rem
+                top: -1rem
+                bottom: -1rem
+                right: -1rem
+                z-index: 2
+                content: ""
+                width: calc(100% + 2rem)
+                height: calc(100% + 2rem)
+            &__picture
+                display: block
+                width: 100%
+                height: 100%
+                object-fit: cover
+                position: relative
+                z-index: 1
+        &__date
+            display: block
+            font-size: 14rem
+            line-height: 21rem
+            color: #8B9298
+            margin: 0 0 3rem 0
+        &__headline
+            font-size: 25rem
+            line-height: 135%
+            display: block
+            margin: 0 0 15rem 0
+            font-family: 'Dela Gothic One'
+        &__description
+            display: block
+            font-size: 18rem
+            line-height: 140%
+
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .blog
+        &__headline
+            width: 715rem
+            margin: 0 auto 18rem auto
+        &__big-news
+            width: 715rem
+            margin: 0 auto 53rem auto
+            &__info
+                padding: 113rem 120rem 0rem 33rem
+                &__date
+                    margin: 0 0 6rem 0
+                &__hedline
+                    font-size: 23rem
+                    margin: 0 0 17rem 0
+                &__description
+                    font-size: 16rem
+                    line-height: 24rem
+        &__articles
+            width: 715rem
+        &__article
+            margin: 0 0 74rem 0
+            &__left
+                width: 36%
+            &__right
+                width: 64%
+                padding: 0 0 0 30rem
+            &__preview
+                height: 180rem
+            &__headline
+                font-size: 23rem
+            &__description
+                font-size: 16rem
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .blog
+        padding: 5rem 0 21rem 0
+        &__headline
+            width: 290rem
+            font-size: 28rem
+            margin: 0 auto 2rem auto
+        &__big-news
+            width: 290rem
+            height: 233rem
+            margin: 0 auto 37rem auto
+            &__image
+                &_desktop
+                    display: none
+                &_mobile
+                    display: block
+            &__fon
+                &_desktop
+                    display: none
+                &_mobile
+                    display: block
+            &__info
+                padding: 50rem 20rem 0rem 20rem
+                &__date
+                    margin: 0 0 5rem 0
+                    font-size: 13rem
+                &__hedline
+                    font-size: 18rem
+                    line-height: 22rem
+                    margin: 0 0 11rem 0
+                &__description
+                    font-size: 13rem
+                    line-height: 18rem
+        &__articles
+            width: 290rem
+        &__article
+            margin: 0 0 50rem 0
+            &:nth-child(odd) &__preview::after
+                background-image: url('../img/article-fon-1-mobile.svg')
+            &:nth-child(even) &__preview::after
+                background-image: url('../img/article-fon-2-mobile.svg')
+            &__left
+                width: 100%
+                margin: 0 0 14rem 0
+            &__right
+                width: 100%
+                padding: 0 0 0 0rem
+            &__preview
+                height: 140rem
+            &__date
+                font-size: 13rem
+                margin: 0 0 11rem 0
+            &__headline
+                font-size: 18rem
+                line-height: 22rem
+                margin: 0 0 11rem 0
+            &__description
+                font-size: 13rem

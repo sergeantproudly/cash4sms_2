@@ -1,0 +1,147 @@
+.faq-page
+    padding: 25rem 0 51rem 0
+    &__center
+        width: 1228rem
+        margin: 0 auto
+    &__section
+        margin: 0 0 65rem 0
+        &:last-child
+            margin: 0
+    &__bread-crumbs
+        margin: 0 0 45rem 30rem
+    &__subtitle
+        margin: 0 0 35rem 0
+        font-weight: 500
+        font-size: 35rem
+        line-height: 1.28
+        padding: 0 29rem
+        font-family: 'Dela Gothic One'
+        position: relative
+        &__anchor
+            position: absolute
+            left: 0
+            top: -30rem
+    &__cover
+        height: 373rem
+        position: relative
+        margin: 0 0 70rem 0
+        &__background
+            position: absolute
+            left: 0
+            top: 0
+            right: 0
+            bottom: 0
+            width: 100%
+            height: 100%
+            z-index: 1
+            &_desktop
+            &_mobile
+                display: none
+        &__illustration
+            right: 62rem
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            z-index: 2
+            width: 426rem
+            height: 426rem
+            &_desktop
+            &_mobile
+                display: none
+        &__info
+            position: relative
+            z-index: 3
+            padding: 70rem 0 0 100rem
+        &__headline
+            font-size: 45rem
+            line-height: 65rem
+            font-family: 'Dela Gothic One'
+            margin: 0 0 18rem 0
+        &__description
+            font-size: 22rem
+            line-height: 27rem
+            margin: 0 0 38rem 0
+        &__target
+            border: none
+            padding: 22rem 50rem
+            background: #FFE03A
+            box-shadow: 0rem 25rem 38rem -10rem rgba(160, 210, 230, 0.31)
+            border-radius: 20rem
+            font-size: 18rem
+            display: inline-block
+            text-decoration: none
+            color: $c-black
+            transition: 0.1s
+            &:hover
+                background-color: #FFD130
+            &:active
+                background-color: #FFC329
+                box-shadow: 0rem 25rem 38rem -10rem rgba(160, 210, 230, 0)
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .faq-page
+        padding: 28rem 0 0rem 0
+        &__center
+            width: 714rem
+        &__bread-crumbs
+            display: none
+        &__subtitle
+            margin: 0 0 18rem 0
+            font-size: 24rem
+        &__cover
+            &__info
+                padding: 58rem 0 0 76rem
+            &__illustration
+                right: -45rem
+            &__headline
+                font-size: 35rem
+                line-height: 51rem
+                margin: 0 0 23rem 0
+            &__description
+                font-size: 20rem
+                line-height: 27rem
+                margin: 0 0 33rem 0
+            &__target
+                    padding: 19rem 35rem
+                    font-size: 17rem
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .faq-page
+        padding: 25rem 0 39rem 0
+        &__center
+            width: 304rem
+        &__bread-crumbs
+            display: none
+        &__subtitle
+            margin: 0 0 19rem 0
+            font-size: 20rem
+            line-height: 29rem
+            padding: 0 17rem
+        &__cover
+            height: 267rem
+            margin: 0 0 39rem 0
+            &__target
+                padding: 13rem 28rem
+                font-size: 16rem
+                border-radius: 18rem
+            &__illustration
+                right: 24rem
+                width: 109rem
+                height: auto
+                &_desktop
+                    display: none
+                &_mobile
+                    display: block
+            &__background
+                &_desktop
+                    display: none
+                &_mobile
+                    display: block
+            &__info
+                padding: 44rem 0 0 30rem
+            &__headline
+                font-size: 25rem
+                line-height: 30rem
+                margin: 0 0 10rem 0
+            &__description
+                font-size: 17rem
+                line-height: 25rem
+                margin: 0 0 20rem 0
