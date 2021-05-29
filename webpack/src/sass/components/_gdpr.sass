@@ -1,0 +1,184 @@
+.gdpr-cookie-message
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+    position: fixed
+    left: 0
+    bottom: 0
+    width: 100%
+    padding: 16rem 25rem
+    z-index: 9
+    background: #FFFFFF
+    box-shadow: 0rem 31rem 49rem -22rem rgba(6, 100, 140, 0.14)
+    border-radius: 19rem
+    bottom: 40rem
+    width: 1297rem
+    left: 50%
+    transform: translateX(-50%)
+    &__headline
+        font-size: 16rem
+        display: inline-block
+        margin: 0 24rem 0 0
+        &::before
+            content: ""
+            width: 35rem
+            height: 35rem
+            display: inline-block
+            vertical-align: middle
+            background-image: url('../img/cookies.svg')
+            background-position: center
+            background-repeat: no-repeat
+            background-size: auto 100%
+            margin: 0 10rem 0 0
+        &__link
+            font-size: inherit
+            color: inherit
+            display: inline-block
+    &__actions
+        display: inline-block
+        &__accept
+            border: 0
+            background-color: #FFE03A
+            border-radius: 12rem    
+            padding: 11rem 26rem
+            font-size: 16rem
+            line-height: 24rem
+            cursor: pointer
+            margin-right: 9rem
+            transition: 0.3s
+            &:hover
+                background-color: #FFD130
+            &:active
+                background-color: #FFC329
+                box-shadow: 0rem 25rem 38rem -10rem rgba(160, 210, 230, 0)
+        &__customize
+            background-color: transparent 
+            padding: 11rem 26rem
+            font-size: 16rem
+            line-height: 24rem
+            cursor: pointer
+            transition: 0.3s
+            border: 2rem solid #FFDF3A
+            border-radius: 15rem
+            &:hover
+                background-color: #FFDF3A
+            &:active
+                background-color: #FFD130
+                border: 2rem solid #FFD130
+    &__types
+        display: inline-block
+        &__title
+            font-size: 16rem
+            display: inline-block
+        &__checkboxes
+            display: inline-block
+            margin: 0 38rem 0 0
+            &__checkbox
+                margin: 0 0 0 23rem
+                display: inline-block
+                input
+                    display: none
+                input:disabled + label::before
+                    opacity: 0.3
+                input:checked + label::before
+                    background: #4299FF
+                    background-image: url('../img/check-white.svg')
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: 60% auto
+                    border: 1px solid #4299FF
+                label
+                    font-size: 16rem
+                    &:hover
+                        cursor: pointer
+                    &::before
+                        background: #FFFFFF
+                        border: 1px solid #DFEBEE
+                        box-shadow: 0px 7px 6px -4px rgba(183, 204, 210, 0.27)
+                        border-radius: 5px
+                        content: ""
+                        display: inline-block
+                        margin: 0 8rem 0 0
+                        width: 24rem
+                        height: 24rem
+                        vertical-align: middle
+
+
+@media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
+    .gdpr-cookie-message
+        bottom: 25rem
+        width: 742rem
+        padding: 25rem 16rem
+        &__headline
+            font-size: 14rem
+            position: relative
+            padding: 0 0 0 56rem
+            width: 426rem
+            &::before
+                position: absolute
+                left: 0
+                top: 0
+                width: 41rem
+                height: 41rem
+            &__link
+        &__actions
+            &__accept
+                font-size: 14rem
+                padding: 8rem 26rem
+            &__customize
+                font-size: 14rem
+                padding: 8rem 26rem
+        &__types
+            &__title
+                margin: 0 0 0 0
+            &__checkboxes
+                margin: 0
+                &__checkbox
+                    width: 170rem
+                    margin: 0 16rem 0 0
+                    &:nth-child(even)
+                        margin: 16rem 124rem 0 0
+                    label
+                        &::before
+@media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
+    .gdpr-cookie-message
+        width: 290rem
+        padding: 25rem 18rem
+        display: block
+        bottom: 10rem
+        &__headline
+            font-size: 14rem
+            margin: 0 0 25rem 0
+            text-align: center
+            &::before
+                display: block
+                width: 39rem
+                height: 39rem
+                margin: 0 auto 8rem auto
+            &__link
+        &__actions
+            display: flex
+            &__accept
+                width: 100%
+                font-size: 14rem
+                margin: 0 4rem
+            &__customize
+                width: 100%
+                margin: 0 4rem
+                font-size: 14rem
+        &__types
+            &__title
+                margin: 0 0 13rem 0
+                font-size: 16rem
+            &__checkboxes
+                margin: 0 0 25rem 0
+                &__checkbox
+                    margin: 0 0 14rem 0
+                    width: 100%
+                    &:last-child
+                        margin: 0
+                    label
+                        font-size: 14rem
+                        &::before
+
