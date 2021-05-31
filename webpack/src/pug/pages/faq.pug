@@ -2,8 +2,8 @@ extends ../includes/template.pug
 
 block seo
     -
-        let title = '' 
-        let description = '' 
+        let title = 'Frequently Asked Questions | Cash4sms App' 
+        let description = 'Read our Frequently Asked Questions for more information about the Cash4sms cash reward app. Get the greatest benefit from the SMS you don’t need.' 
 
     title !{title}
     meta(
@@ -33,14 +33,6 @@ block content
         .faq-page__center
             div(
                 animation
-                animation-arrow="bottom"
-            )#bread-crumbs.bread-crumbs.faq-page__bread-crumbs
-                ul
-                    li.bread-crumbs__crumb
-                        a( href="/") Main
-                    li.bread-crumbs__crumb FAQ
-            div(
-                animation
                 animation-arrow="bottom").faq-page__cover
                 img(
                     src=`${url}assets/img/faq-page-background.svg`
@@ -62,11 +54,17 @@ block content
                     ).faq-page__cover__target Find out
             .faq-page__sections
                 .faq-page__section
+                    //- p(
+
+                    //-     animation
+                    //-     animation-arrow="bottom"
+                    //- ).faq-page__subtitle How do incoming SMS work
+                    //-     span.faq-page__subtitle__anchor#faq-page__subtitle__anchor_1
                     p(
 
                         animation
                         animation-arrow="bottom"
-                    ).faq-page__subtitle How do incoming SMS work
+                    ).faq-page__subtitle 
                         span.faq-page__subtitle__anchor#faq-page__subtitle__anchor_1
                     .faq
                         .faq__questions
@@ -91,37 +89,114 @@ block content
                                     div(
                                     ).faq__question__open
                                 div.faq__question__answer 
-                                    p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
-                .faq-page__section
-                    p(
+                                    p.faq__question__answer__text At the moment, Cash4SMS supports all versions of the Android operating system above 5.0.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline When can I withdraw my money?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text We are making payouts by request when your balance is 5 euro or higher. In all other cases, we are transferring money right after the billing period. So, if you’ve sent SMS in February, we will transfer your money to your PayPal account during the first week of March.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline Is Cash4SMS safe to install it?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text Absolutely! Cash4SMS is a completely safe cash reward app that cares about your security and privacy.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline Do you have a Cash4SMS app for iPhone?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text Unfortunately, due to iOS restrictions related to SMS sending Cash4SMS is available for Android devices only.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline How can I get information about SMS included in my mobile bundle/tariff plan?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text Please contact your mobile operator for this kind of information.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline Which personal data do you collect while registering a new user?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text You should provide your name, surname, phone number, date of birth, country (it will be automatically recognized by the App), you will add your payment details in the App Setting and you will be asked for your PayPal ID. <br>IMPORTANT!!! Please make sure that your name and surname provided during the initial registration fully match your PayPal account details.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline Why does it say ‘Service Unavailable’?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text Our service is available in almost all countries all over the world. At the same time, there are still some mobile operators that are not connected and we are constantly working to cover all of them. If you see ‘Service Unavailable’ after passing the access test it means that currently your operator is not connected and you can’t use our service.
+                            div(
+                                animation
+                                animation-arrow="bottom"
+                            ).faq__question
+                                .faq__question__top
+                                    p(
+                                    ).faq__question__headline How do I get paid for the SMS i send?
+                                    div(
+                                    ).faq__question__open
+                                div.faq__question__answer 
+                                    p.faq__question__answer__text At the moment we are transferring money right after the billing period. So, if you’ve sent SMS in March, we will transfer your money to your PayPal account during the first week of April. However, if you reach the amount of 5 Euro you can just type Payout in the chat and we will make the money transfer within 1-2 business days. Don’t forget to fill in your PayPal info to get the money transfer.
+                //- .faq-page__section
+                //-     p(
 
-                        animation
-                        animation-arrow="bottom"
-                    ).faq-page__subtitle How do outgoing SMS work
-                    .faq
-                        .faq__questions
-                            div(
-                                animation
-                                animation-arrow="bottom"
-                            ).faq__question
-                                .faq__question__top
-                                    p(
-                                    ).faq__question__headline What is the main goal of Cash4SMS?
-                                    div(
-                                    ).faq__question__open
-                                div.faq__question__answer 
-                                    p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
-                            div(
-                                animation
-                                animation-arrow="bottom"
-                            ).faq__question
-                                .faq__question__top
-                                    p(
-                                    ).faq__question__headline Which mobile operating systems does Cash4SMS support?
-                                    div(
-                                    ).faq__question__open
-                                div.faq__question__answer 
-                                    p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+                //-         animation
+                //-         animation-arrow="bottom"
+                //-     ).faq-page__subtitle How do outgoing SMS work
+                //-     .faq
+                //-         .faq__questions
+                //-             div(
+                //-                 animation
+                //-                 animation-arrow="bottom"
+                //-             ).faq__question
+                //-                 .faq__question__top
+                //-                     p(
+                //-                     ).faq__question__headline What is the main goal of Cash4SMS?
+                //-                     div(
+                //-                     ).faq__question__open
+                //-                 div.faq__question__answer 
+                //-                     p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
+                //-             div(
+                //-                 animation
+                //-                 animation-arrow="bottom"
+                //-             ).faq__question
+                //-                 .faq__question__top
+                //-                     p(
+                //-                     ).faq__question__headline Which mobile operating systems does Cash4SMS support?
+                //-                     div(
+                //-                     ).faq__question__open
+                //-                 div.faq__question__answer 
+                //-                     p.faq__question__answer__text The main goal of Cash4SMS is to help mobile users get the most value out of their mobile plans by allowing them to sell their unused SMS messages.
         
     include ../includes/footer.pug
     +footer()

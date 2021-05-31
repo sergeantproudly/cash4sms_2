@@ -45,7 +45,7 @@
             ],
             title: 'Cookies & Privacy',
             message: 'Cookies enable you to use shopping carts and to personalize your experience on our sites, tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches, and give us insights into user behavior so we can improve our communications and products.',
-            link: '/privacy-policy',
+            link: '/privacy-policy/',
             delay: 2000,
             expires: 30,
             moreInfoLabel: 'More information',
@@ -222,7 +222,7 @@ $(document).ready(function() {
 	$('body').ihavecookies({
 		title: "Cookies & Privacy",
 		message: "This website uses cookies to ensure you get the best experience on our website.",
-		link: "cookies-policy.html",
+		link: "/cookies-policy/",
 		delay: 500,
 		expires: 30, // 30 days
 	});

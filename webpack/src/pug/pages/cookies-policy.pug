@@ -1,0 +1,79 @@
+extends ../includes/template.pug
+
+block seo
+    -
+        let title = 'Cookies Policy for Cash4sms App' 
+        let description = 'Check out our cookies policy that explains what cookies are, and why and how they are used on Cash4sms website.' 
+
+    title !{title}
+    meta(
+        name="description"
+        property="og:description" 
+        content=`${description}`
+    )
+    <meta name="keywords"       content="" />
+
+    meta(
+        property="og:title"
+        content=`${title}`
+    )
+    meta(
+        name="twitter:description"
+        content=`${description}`
+    )
+    meta(
+        name="twitter:title"
+        content=`${title}`
+    )
+
+block content
+    include ../includes/header.pug
+    +header()
+    .page
+        .page__center
+            div(
+                animation
+                animation-arrow="bottom"
+            ).page__content
+                <div class="page__content__date">Last updated: 27 February 2019</div>
+                <h1 class="page__headline">Cookies Policy</h1>
+                <p>TELENUMBERS HOLDINGS LTD (&ldquo;Company&rdquo;, &ldquo;We&rdquo;, &ldquo;Us&rdquo;, &ldquo;Our&rdquo;) uses                    cookies (&ldquo;Cookies&rdquo;) on the <a href="https://cash4sms.today/">https://cash4sms.today</a>                    website (&ldquo;Website&rdquo;), when the users (&ldquo;User&rdquo;, &ldquo;You&rdquo;,                    &ldquo;Your&rdquo;) visit it.</p>
+
+                <p>This Policy explains what Cookies are, and why and how they are used on this Website.</p>
+
+                <h3>What Cookies Are</h3>
+                <p>Cookies are small text files placed and saved on the User&rsquo;s computer or mobile or other usable                    device in order to make this Website operate more efficiently and in accordance with the                    User&rsquo;s                    preferences.</p>
+
+                <h3>Why and How We Use Cookies</h3>
+                <p>Cookie files help us to provide our Website operation, customized functionality, and improved and                    safe                    usability. Due to cookies we may record our users browsing activity, verify our users accounts to                    prevent fraudulent use, ensure the safety and security, provide mailings, analytics, research,                    monitor statistics data, adhere to your preferences.</p>
+
+                <p>Cookies are used to memorize the User&rsquo;s choice of cookies on this Website to recognize him or                    her during next visits and customize the use and search. E.g., if the User indicates his/her                    preference, this preference will be stored in an appropriate Cookie file (the cookie name:                    civicCookieControl)</p>
+
+                <p>In order to improve our Website use and collect information on how you use our Website, what pages                    are                    used and other similar usage data, we can use Google Analytics (example of the cookie name: _ga,                    etc.)</p>
+
+                <p>We may use first party cookies and third party cookies, so that our User can log in to our Website                    services, memorize preferences and settings, keep the User&rsquo;s account safe and protected,                    promote our services, etc.</p>
+
+                <p>Cookie files that we can use and apply on our Website are as follows:</p>
+                <ul>
+                    <li><strong>Session cookies</strong> (Temporary or Transient cookie)</li>
+                </ul>
+                <p>Session cookies are erased when the User closes the web browser. The session cookie is stored in                    temporary memory of the device. It is not kept after the browser is closed and it does not collect                    the data from the User&rsquo;s device. Therefore, when you restart your browser and return to the                    used website that made such cookie, this website will not remember or recognise you.</p>
+                <ul>
+                    <li><strong>Persistent cookies</strong> (Permanent or Stored cookie)</li>
+                </ul>
+                <p>Persistent cookie is stored on your device hard drive, in your browser's subfolders until it expires                    based on the duration period contained within the persistent cookie's file or until you delete it                    manually. These cookies are used to collect and store the User&rsquo;s identifying data (e.g.,                    searching behavior, preferences, etc.)</p>
+                <ul>
+                    <li><strong>First Party and Third Party cookies</strong></li>
+                </ul>
+                <p>First party cookie is a cookie created by a website you visit. Third party cookie is set by a website                    other than a website you visit.</p>
+                <p>E.g., Google Analytics cookies set on this website are third party cookies which measure how many                    users visit our Website. On our Website we may also use the Social Media buttons, which navigate you                    to the appropriate social network.</p>
+                <p>Please, note that third party cookies set by third party websites are governed by their own cookie                    policies, not covered by our Cookies Policy and thus being beyond our responsibility.</p>
+
+                <h3>Choice of Cookies</h3>
+                <p>When you access our Website, we will advise you to enable or disable the Cookies we use. You may                    accept or refuse them. Our Cookies make your use of our Website more convenient and optimized,                    however if you do not agree with our Cookies use, you may disable or delete them in your browser.                    You                    can also change the settings of Cookies. To this extent, you may visit the website <a href="http://www.allaboutcookies.org/">http://www.allaboutcookies.org/</a> for further guidance on how to manage Cookies.&nbsp;&nbsp;&nbsp;</p>
+
+                <p>Should you have any questions regarding this Cookies Policy, please contact us at:
+                    <a href="mailto:support@cash4sms.today">support@cash4sms.today</a>
+                </p>
+    include ../includes/footer.pug
+    +footer()

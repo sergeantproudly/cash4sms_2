@@ -1,0 +1,87 @@
+extends ../includes/template.pug
+
+block seo
+    -
+        let title = 'CASH4SMS at the FIAERC 2020' 
+        let description = 'CASH4SMS at the FIAERC 2020' 
+
+    title !{title}
+    meta(
+        name="description"
+        property="og:description" 
+        content=`${description}`
+    )
+    <meta name="keywords"       content="" />
+
+    meta(
+        property="og:title"
+        content=`${title}`
+    )
+    meta(
+        name="twitter:description"
+        content=`${description}`
+    )
+    meta(
+        name="twitter:title"
+        content=`${title}`
+    )
+
+block content
+    include ../includes/header.pug
+    +header()
+    div(
+        itemscope itemtype="http://schema.org/Article"
+    ).article
+        .article__center
+            div(
+                animation
+                animation-arrow="bottom"
+            )#bread-crumbs.bread-crumbs.article__bread-crumbs
+                ul
+                    li.bread-crumbs__crumb
+                        a( href=`${url}`) Main
+                    li.bread-crumbs__crumb
+                        a(href=`${url}blog/`) Blog
+                    li.bread-crumbs__crumb CASH4SMS at the FIAERC 2020
+            div(
+                itemprop="articleBody"
+                animation
+                animation-arrow="bottom"
+            ).article__content
+                <div class="article__content__date" itemprop="datePublished">19 May 2020</div>
+                <h1 class="article__content__h2" itemprop="headline">CASH4SMS at the FIAERC 2020</h1>
+                <p class="article__content__bolder">The FIA ERC (Fédération Internationale de l'Automobile European Rally Championship) is one of the most awaited motorsport events in Europe every year. In early May, Dmitry Feofanov’s Mitsubishi Lancer Evo X was unveiled, and yes, you see that right: Cash4SMS will be in the FIA ERC 2020, supporting rally pilot Feofanov’s crew in the championship races.</p>
+                figure.article__content__figure
+                    img(class="article__content__image" src=`${url}assets/articles/c4s-erc-2020-1.png` alt="CASH4SMS at the FIAERC 2020" title="CASH4SMS at the FIAERC 2020" itemprop="image")
+                    <figcaption class="article__content__caption">Image source: <a href="https://www.fiaerc.com/uncovered-feofanovs-erc2-challenger/" rel="nofollow" target="_blank">FIAERC.com</a></figcaption>
+                <p class="article__content__paragraph">Feofanov, title holder for the <a href="https://www.ewrc-results.com/season/2017/35-/?cat=2703#points" rel="nofollow" target="_blank">EMV3/Estonian Rally Championship 2017</a> and <a href="https://www.ewrc-results.com/season/2018/905-baltic-rally-trophy/?cat=4024#points" rel="nofollow" target="_blank">ERT2/Baltic Rally Trophy 2018</a>, has registered for ERC2 points in his Prospeed-run car. His co-driver will be Normunds Kokins from Latvia, who has been racing in various rally events since 2005. Feofanov and Normunds also drove together most recently in the Arctic Lapland Rally this winter.</p>
+                <p class="article__content__paragraph">Cash4SMS and FEBO Telecom are proud to call the Baltic states home. To support two of their drivers in the FIA ERC’s more than 60 years of tradition of excellence in auto sports is exciting. It makes us thrilled to see the company racing in the rally, although of course all the great work will belong to the drivers and the crew!</p>
+                <p class="article__content__paragraph">Feofanov says, “As a minimum I would like to get more experience of how to drive ERC rallies, particularly the events I did not participate in last year,” Feofanov said upon announcing his ERC2 programme. “Also, I will do my best to be at the ERC2 podium at the end of 2020.”</p>
+                <p class="article__content__paragraph">Cash4SMS: Start earning today! The slogan on Feofanov’s Mitsubishi Lancer EVO X underlines Cash4SMS’s unique service: get rebates for your unused international SMS.  Cash4SMS is one of the straight-to-consumer projects of FEBO Telecom, along with FEBO Mobi, a reliable, cheaper network option for calls and data when abroad.</p>
+                <p class="article__content__paragraph">Both <a href="https://febo.mobi">FEBO.Mobi</a> and <a href="https://cash4sms.today">Cash4SMS</a> stand for speed and dependability. These values will be racing across gravel and asphalt in the FIAERC.</p>
+                <p class="article__content__paragraph">Who are you rooting for? The FIA European Rally Championship is set to be contested over seven events. The first round, Rally Di Roma Capitale in Italy, will be on July 24-26.</p>
+                <p class="article__content__bolder">Go here for the <a href="https://www.fiaerc.com/erc-2020-calendar-refresher/" rel="nofollow" target="_blank">Rally Calendar.</a></p>
+            //- div(
+            //-     animation
+            //-     animation-arrow="bottom"
+            //- ).article__share
+            //-     a(
+            //-         href="#"
+            //-     ).article__share__link
+            //-         img(
+            //-             src=`${url}assets/img/facebook.svg`
+            //-         ).article__share__link__picture
+            //-     a(
+            //-         href="#"
+            //-     ).article__share__link
+            //-         img(
+            //-             src=`${url}assets/img/twitter.svg`
+            //-         ).article__share__link__picture
+            //-     a(
+            //-         href="#"
+            //-     ).article__share__link
+            //-         img(
+            //-             src=`${url}assets/img/instagram.svg`
+            //-         ).article__share__link__picture
+    include ../includes/footer.pug
+    +footer()
