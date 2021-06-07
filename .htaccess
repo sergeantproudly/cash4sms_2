@@ -1,0 +1,11 @@
+Order Allow,Deny
+Allow from All
+AddDefaultCharset UTF-8
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} /dist/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=301]
+
+RewriteRule ^((?!dist/).*)$ dist/$1 [L,NC]
