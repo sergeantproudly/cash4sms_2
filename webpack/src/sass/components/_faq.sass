@@ -78,6 +78,8 @@
                 background-color: #52CBFF
         &_hidden &__answer
             margin: 8rem 0 0 0 
+    & + .faq-section__subtitle
+        padding-top: 40rem
 @media (min-width: #{map-get($grid-breakpoints, tablet)}px) and (max-width: calc(#{map-get($grid-breakpoints, desktop)}px - 1px))
     .faq
         &__question
@@ -94,6 +96,8 @@
             &__answer
                 &__text
                     width: 100%
+        & + .faq-section__subtitle
+            padding-top: 20rem
 @media (max-width: calc(#{map-get($grid-breakpoints, tablet)}px - 1px))
     .faq
         &__question
