@@ -1,0 +1,17 @@
+Order Allow,Deny
+Allow from All
+AddDefaultCharset UTF-8
+RewriteEngine On
+
+#RewriteCond %{HTTP_HOST} ^www.cash4sms.today$ [NC]
+#RewriteRule ^(.*)$ https://cash4sms.today/$1 [R=301,L]
+
+RewriteRule ^(.*)faq.html$ https://cash4sms.today/faq/ [R=301,L]
+RewriteRule ^(.*)blog.html$ https://cash4sms.today/blog/ [R=301,L]
+RewriteRule ^(.*)best-birdchain-alternative.html$ https://cash4sms.today/best-birdchain-alternative/ [R=301,L]
+RewriteRule ^(.*)cash4sms-erc-2020.html$ https://cash4sms.today/cash4sms-erc-2020/ [R=301,L]
+RewriteRule ^(.*)terms-changed.html$ https://cash4sms.today/terms-changed/ [R=301,L]
+RewriteRule ^(.*)best-cashback-app.html$ https://cash4sms.today/best-cashback-app/ [R=301,L]
+RewriteRule ^(.*)policy.html$ https://cash4sms.today/privacy-policy/ [R=301,L]
+RewriteRule ^(.*)cookies-policy.html$ https://cash4sms.today/cookies-policy/ [R=301,L]
+RewriteRule ^(.*)terms.html$ https://cash4sms.today/terms-of-use/ [R=301,L]
