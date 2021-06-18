@@ -1,0 +1,36 @@
+	location /faq.html {
+		return 301 https://$server_name/faq/;
+	}
+
+	location /blog.html {
+		return 301 https://$server_name/blog/;
+	}
+
+	location /best-birdchain-alternative.html {
+		return 301 https://$server_name/best-birdchain-alternative/;
+	}
+
+	location /cash4sms-erc-2020.html {
+		return 301 https://$server_name/cash4sms-erc-2020/;
+	}
+
+	location /terms-changed.html {
+		return 301 https://$server_name/terms-changed/;
+	}
+
+	location /best-cashback-app.html {
+		return 301 https://$server_name/best-cashback-app/;
+	}
+
+	location /policy.html {
+		return 301 https://$server_name/privacy-policy/;
+	}
+
+	location /cookies-policy.html {
+		return 301 https://$server_name/cookies-policy/;
+	}
+
+	location /terms.html {
+		return 301 https://$server_name/terms-of-use/;
+	}
+
