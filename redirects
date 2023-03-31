@@ -34,3 +34,7 @@
 		return 301 https://$server_name/terms-of-use/;
 	}
 
+	location /earn-money-by-receiving-text-messages.html {
+		return 301 https://$server_name/earn-money-by-receiving-text-messages/;
+	}
+
