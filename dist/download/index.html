@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Cash4sms - Download App</title>
+        <meta
+            name="description"
+            property="og:description"
+            content="Earn PayPal cash from the SMS you don’t use. With Cash4sms cash back app earning money was never so easy on your smartphone." />
+        <meta name="keywords" content="" />
+        <meta property="og:title" content="Cash4sms - Get Cash Back From SMS You Don’t Use" />
+        <meta name="twitter:description" content="Earn PayPal cash from the SMS you don’t use. With Cash4sms cash back app earning money was never so easy on your smartphone." />
+        <meta name="twitter:title" content="Cash4sms - Get Cash Back From SMS You Don’t Use" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/assets/css/main.css?v-1683050997738" rel="stylesheet" />
+        <link rel="shortcut icon" href="/favicon.ico?v-1683050997738" />
+        <meta property="og:image" content="/assets/img/preview.png" />
+        <meta property="og:locale" content="en_EN" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/assets/img/preview.png" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <script>
+            let url = "https://cash4sms.today/Cash4SMS-1.0.81-production-release.apk";
+
+            setTimeout(() => {
+                downloadFile(url);
+            }, 3000);
+
+            function downloadFile(url) {
+                return fetch(url, {
+                    method: "GET",
+                }).then(() => {
+                      let event = new Event("app_download", { bubbles: true });
+                      document.dispatchEvent(event);
+                      window.close();
+                });
+            }
+        </script>
+    </body>
+</html>
