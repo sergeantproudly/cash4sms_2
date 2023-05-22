@@ -28,21 +28,10 @@
     </head>
     <body>
         <script>
-            let url = "https://cash4sms.today/Cash4SMS-1.0.81-production-release.apk";
-
-            setTimeout(() => {
-                downloadFile(url);
-            }, 3000);
-
-            function downloadFile(url) {
-                return fetch(url, {
-                    method: "GET",
-                }).then(() => {
-                      let event = new Event("app_download", { bubbles: true });
-                      document.dispatchEvent(event);
-                      window.close();
-                });
-            }
+            let event = new Event("app_download", { bubbles: true });
+            document.dispatchEvent(event);
+            let url = "/Cash4SMS-1.0.81-production-release.apk";
+            window.location.href = url;
         </script>
     </body>
 </html>
