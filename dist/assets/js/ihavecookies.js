@@ -129,12 +129,12 @@
     }
 }(jQuery));
 $(document).ready(function () {
-    var titleCookie = "This website uses cookies to ensure you get the best experience on our website.";
+    var titleCookie = "This website uses cookies to ensure you get the best experience on our website. ";
     var textLink = "More information";
     var acceptBtn = 'Accept';
     var advancedBtn = 'Customise';
     if ($('html').attr('lang') == "fr") {
-        titleCookie = "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site web.";
+        titleCookie = "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site web. ";
         textLink = "Plus d'information";
         acceptBtn = "Accepter";
         advancedBtn = "Personnaliser";
