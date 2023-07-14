@@ -64,11 +64,14 @@
                 </div>
               </div>
             </footer>
-      <script>
-           let url = "/demo.zip";
-           window.location.href = url;
+          <script>
+          window.history.replaceState({}, document.title, '/thank-you/');
 
-           window.history.replaceState({}, document.title, '/thank-you/');
+          gtag('event', "App_download");
+          console.log("App_download event");
+
+          let url = "/demo.zip";
+          window.location.href = url;           
         </script>  
     </div>
     <script src="/assets/js/common.js?v-1685467825033"></script>
