@@ -20,7 +20,15 @@
     <meta name="twitter:image" content="/assets/img/preview.png"><link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:ital,wght@0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/assets/js/jquery.js">    </script>
-    <script type="text/javascript" src="/assets/js/ihavecookies.js?v-1">   </script>
+    <script type="text/javascript" src="/assets/js/ihavecookies.js?v-1">   </script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QD51MJP8YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QD51MJP8YN');
+      
+    </script>
   </head>
   <body>
     <div class="download-page">
@@ -28,7 +36,7 @@
               <div class="header__center">
                 <div class="header__side"><a class="header__logo" animation animation-arrow="bottom" href="/"><img class="header__logo__picture" src="/assets/img/logo.svg"></a></div>
                 <div class="header__side">
-                  <div class="header__links" animation animation-arrow="bottom"><a class="header__links__link" href="/blog/">Blog</a><a class="header__links__link" href="/faq/">FAQ</a></div>
+                  <div class="header__links" animation animation-arrow="bottom"><a class="header__links__link" href="/blog/">Blog</a><a class="header__links__link" href="/faq/">FAQ</a></div><a class="header__install" animation animation-arrow="bottom" href="#">Install the app</a>
                   <div class="header__burger">
                     <div class="header__burger__lines" animation animation-arrow="bottom">
                       <div class="header__burger__lines__line"></div>
@@ -44,8 +52,9 @@
             </header>
       <div class="page">
         <div class="page__center">
-          <p class="download-page__text">Downloading demo page here</p>
-          <p class="download-page__text"> If the download does not start automatically, click <a  href="#">this link </a></p>
+          <div class="page__content" animation animation-arrow="bottom">
+            <p class="download-page__text">Thank you for downloading our app!</p>
+          </div>
         </div>
       </div>
             <footer class="footer" animation>
@@ -63,13 +72,9 @@
                   </div>
                 </div>
               </div>
-            </footer>
-      <script async>
-           let url = "/demo.zip";
-           //window.location.href = url;
-
-           window.history.replaceState({}, document.title, '/thank-you/');
-        </script>  
+            </footer><script async>
+         //window.location.href = url;
+      </script> 
     </div>
     <script src="/assets/js/common.js?v-1685467825033"></script>
   </body>
