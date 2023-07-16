@@ -59,13 +59,6 @@
 
 	$mysqli = new mysqli($db['server'], $db['username'], $db['password'], $db['dbname']);
 	if (!$mysqli->connect_error) {
-		$ip = isset($_SERVER['HTTP_CLIENT_IP']) 
-		    ? $_SERVER['HTTP_CLIENT_IP'] 
-		    : (isset($_SERVER['HTTP_X_FORWARDED_FOR']) 
-			    ? $_SERVER['HTTP_X_FORWARDED_FOR'] 
-			    : $_SERVER['REMOTE_ADDR']);
-		$mysqli->query('INSERT INTO `counters` (`ip`, `ts`, `counter`) VALUES ("' . $ip . '", NOW(), 1)');
-
 	  	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
 	  	$content = '';
 	  	if ($res->num_rows > 0) {
@@ -81,7 +74,7 @@
 	  		$content .= '</tbody></table>';
 	  	}
 	  	print $content;
-}
+	}
 
 ?>
 	</div>
