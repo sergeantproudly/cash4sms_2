@@ -25,6 +25,11 @@
     	table {
     		font-size: 20px;
     		padding: 3vw;
+    		border-collapse: collapse;
+    	}
+    	table th {
+    		padding: 10px 20px;
+    		border: 1px solid #999;
     	}
     	table td {
     		padding: 10px 20px;
@@ -33,6 +38,12 @@
     </style>
   </head>
   <body>
+  	<div class="download-page">
+  		<header class="header">
+              <div class="header__center">
+                <div class="header__side"><a class="header__logo" animation animation-arrow="bottom" href="/"><img class="header__logo__picture" src="/assets/img/logo.svg" loading="lazy"></a></div>
+              </div>
+            </header>
 
 <?php
 
@@ -53,7 +64,7 @@
 	  	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
 	  	$content = '';
 	  	if ($res->num_rows > 0) {
-	  		$content .= '<table><thead><tr><th>IP-адрес</th><th>Дата</th><th>Номер счетчика</th></tr></thead><tbody>';
+	  		$content .= '<table cellspacing="0" cellpadding="0"><thead><tr><th>IP-адрес</th><th>Дата</th><th>Номер счетчика</th></tr></thead><tbody>';
 
 	  		while ($rec = $res->fetch_assoc()) {
 	  			$ip = $rec['ip'];
@@ -68,6 +79,6 @@
 }
 
 ?>
-
+	</div>
 </body>
 </html>
