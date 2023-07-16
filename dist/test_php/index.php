@@ -27,7 +27,7 @@ error_reporting(E_ALL);
   		while ($rec = $res->fetch_assoc()) {
   			$ip = $rec['ip'];
   			$date = $rec['ts'];
-  			$counter = $rec['counter'] == 1 ? 'Основной счетчик';
+  			$counter = $rec['counter'] == 1 ? 'Основной счетчик' : '';
   			$content .= '<tr><td>' . $ip . '</td><td>' . $date . '</td><td>' . $counter . '</td></tr>';
   		}
 
