@@ -37,7 +37,7 @@
     		transition: background-color .2s;
     	}
     	table tr:hover td {
-    		backgorund-color: #dcf5ff;
+    		background-color: #dcf5ff;
     		transition: background-color .2s;
     	}
     </style>
