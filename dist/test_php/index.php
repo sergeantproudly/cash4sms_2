@@ -2,7 +2,7 @@
 
 $db['server'] = 'localhost';
 $db['username'] = 'c4a';
-$db['password'] = 'pa4c';
+$db['password'] = 'a4c';
 $db['dbname'] = 'c4a';
 
 $mysqli = new mysqli($db['server'], $db['username'], $db['password'], $db['dbname']);
