@@ -15,12 +15,9 @@ if (!$mysqli->connect_error) {
 	$mysqli->query('INSERT INTO `counters` SET `ip` = ' . $ip . ', `ts` = NOW(), `counter` = 1');
   	echo 'It works';
 
-  	ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
   	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
   	$content = '';
+  	var_dump($res->num_rows);
   	if ($res->num_rows > 0) {
   		$content .= '<table><thead><tr><th>IP-адрес</th><th>Дата</th><th>Номер счетчика</th></tr></thead><tbody>';
 
@@ -33,6 +30,7 @@ error_reporting(E_ALL);
 
   		$content .= '</tbody></table>';
   	}
+  	var_dump($content);
   	print $content;
 }
 
