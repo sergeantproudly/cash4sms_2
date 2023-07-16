@@ -13,11 +13,9 @@ if (!$mysqli->connect_error) {
 		    ? $_SERVER['HTTP_X_FORWARDED_FOR'] 
 		    : $_SERVER['REMOTE_ADDR']);
 	$mysqli->query('INSERT INTO `counters` (`ip`, `ts`, `counter`) VALUES ("' . $ip . '", NOW(), 1)');
-  	echo 'It works';
 
   	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
   	$content = '';
-  	var_dump($res->num_rows);
   	if ($res->num_rows > 0) {
   		$content .= '<table><thead><tr><th>IP-адрес</th><th>Дата</th><th>Номер счетчика</th></tr></thead><tbody>';
 
@@ -30,7 +28,6 @@ if (!$mysqli->connect_error) {
 
   		$content .= '</tbody></table>';
   	}
-  	var_dump($content);
   	print $content;
 }
 
