@@ -17,7 +17,7 @@ if (!$mysqli->connect_error) {
   	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
   	$content = '';
   	if ($res->num_rows > 0) {
-  		$content .= '<table><thead><tr><th>IP-адрес</th><th>Дата</th><th>Номер счетчика</th></tr></thead><tbody>';
+  		$content .= '<table border="1" cellspacing="5"><thead><tr><th>IP-адрес</th><th>Дата</th><th>Номер счетчика</th></tr></thead><tbody>';
 
   		while ($rec = $res->fetch_assoc()) {
   			$ip = $rec['ip'];
