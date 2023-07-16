@@ -14,6 +14,22 @@ if (!$mysqli->connect_error) {
 		    : $_SERVER['REMOTE_ADDR']);
 	$mysqli->query('INSERT INTO `counters` SET `ip` = ' . $ip . ', `ts` = NOW(), `counter` = 1');
   	echo 'It works';
+
+  	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
+  	$content = '';
+  	if ($res->num_rows > 0) {
+  		$content .= '<table><thead><tr><th>IP-адрес</th><th>Дата</th><th>Номер счетчика</th></tr></thead><tbody>';
+
+  		while ($rec = $res->fetch_assoc()) {
+  			$ip = $rec['ip'];
+  			$date = $rec['ts'];
+  			$counter = $rec['counter'] == 1 ? 'Основной счетчик';
+  			$content .= '<tr><td>' . $ip . '</td><td>' . $date . '</td><td>' . $counter . '</td></tr>';
+  		}
+
+  		$content .= '</tbody></table>';
+  	}
+  	print $content;
 }
 
 ?>
