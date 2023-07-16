@@ -23,7 +23,7 @@ if (!$mysqli->connect_error) {
 
   		while ($rec = $res->fetch_assoc()) {
   			$ip = $rec['ip'];
-  			$date = $rec['ts'];
+  			$date = date('d.m.Y H:i', strtotime($rec['ts']));
   			$counter = $rec['counter'] == 1 ? 'Основной счетчик' : '';
   			$content .= '<tr><td>' . $ip . '</td><td>' . $date . '</td><td>' . $counter . '</td></tr>';
   		}
