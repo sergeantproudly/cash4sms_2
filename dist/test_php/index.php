@@ -12,7 +12,7 @@ if (!$mysqli->connect_error) {
 	    : (isset($_SERVER['HTTP_X_FORWARDED_FOR']) 
 		    ? $_SERVER['HTTP_X_FORWARDED_FOR'] 
 		    : $_SERVER['REMOTE_ADDR']);
-	$mysqli->query('INSERT INTO `counters` SET `ip` = ' . $ip . ', `ts` = NOW(), `counter` = 1');
+	$mysqli->query('INSERT INTO `counters` (`ip`, `ts`, `counter`) VALUES ("' . $ip . '", NOW(), 1)');
   	echo 'It works';
 
   	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
