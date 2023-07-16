@@ -34,6 +34,11 @@
     	table td {
     		padding: 10px 20px;
     		border: 1px solid #999;
+    		transition: background-color .2s;
+    	}
+    	table tr:hover td {
+    		backgorund-color: #dcf5ff;
+    		transition: background-color .2s;
     	}
     </style>
   </head>
