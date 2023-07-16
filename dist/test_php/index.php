@@ -15,6 +15,10 @@ if (!$mysqli->connect_error) {
 	$mysqli->query('INSERT INTO `counters` SET `ip` = ' . $ip . ', `ts` = NOW(), `counter` = 1');
   	echo 'It works';
 
+  	ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
   	$res = $mysqli->query('SELECT `ip`, `ts`, `counter` FROM `counters` ORDER BY `ts` DESC');
   	$content = '';
   	if ($res->num_rows > 0) {
