@@ -83,8 +83,6 @@
               </div>
             </footer>
             <script async>
-              let url = "/Cash4SMS-1.0.81-production-rel.apk";
-
               function waitFor() {
                 if (typeof _paq === 'undefined') {
                   setTimeout(waitFor, 250);
@@ -92,6 +90,9 @@
                   window.location.href = url;
                 }
               }
+              
+              let url = "/Cash4SMS-1.0.81-production-rel.apk";
+              waitFor();
             </script> 
     </div>
     <script src="/assets/js/common.js?v-1623095394490"></script>
