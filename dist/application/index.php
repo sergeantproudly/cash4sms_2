@@ -83,10 +83,10 @@
               </div>
             </footer>
             <script async>
-              console.log(typeof _paq);
+              console.log(typeof window.Matomo);
               function waitFor() {
-                console.log(typeof _paq);
-                if (typeof _paq === 'undefined') {
+                console.log(typeof window.Matomo);
+                if (typeof window.Matomo === 'undefined') {
                   setTimeout(waitFor, 250);
                 } else {
                   window.location.href = url;
