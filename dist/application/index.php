@@ -83,9 +83,16 @@
               </div>
             </footer>
             <script async>
-           let url = "/Cash4SMS-1.0.81-production-rel.apk";
-           window.location.href = url;
-        </script> 
+              let url = "/Cash4SMS-1.0.81-production-rel.apk";
+
+              function waitFor() {
+                if (typeof _paq === 'undefined') {
+                  setTimeout(waitFor, 250);
+                } else {
+                  window.location.href = url;
+                }
+              }
+            </script> 
     </div>
     <script src="/assets/js/common.js?v-1623095394490"></script>
   </body>
