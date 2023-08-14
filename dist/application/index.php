@@ -83,9 +83,7 @@
               </div>
             </footer>
             <script async>
-              console.log(typeof window.Matomo);
               function waitFor() {
-                console.log(typeof window.Matomo);
                 if (typeof window.Matomo === 'undefined') {
                   setTimeout(waitFor, 250);
                 } else {
