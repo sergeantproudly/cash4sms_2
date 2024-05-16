@@ -1,1 +1,5 @@
 node_modules/
+.cache/
+.nano/
+.bash_history
+.mysql_history
