@@ -3,3 +3,4 @@ node_modules/
 .nano/
 .bash_history
 .mysql_history
+*.log

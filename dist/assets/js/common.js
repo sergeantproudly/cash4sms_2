@@ -439,7 +439,13 @@
                         var t = document.querySelector(".modal.open");
                         t ? _(t) : document.body.style.cssText = "overflow: hidden;",
                             e.classList.add("open"),
-                            "modal" == e.id && e.querySelector(".modal__download").setAttribute("href", "/application/")
+                            "modal" == e.id && e.querySelector(".modal__download").setAttribute("href", "app");
+                            if (!(e.querySelector(".app-agree-checkbox"))) {
+                                var lab = document.createElement('label');
+                                lab.className = 'checkbox';
+                                lab.innerHTML = '<input type="checkbox" name="agree" class="hidden checkbox__input app-agree-checkbox" data-feature="download" required><span class="checkbox__content">I want to download the app from the website</span>';
+                                e.querySelector(".modal__download").parentNode.insertBefore(lab, e.querySelector(".modal__download"));
+                            }
                     }
                 }(document.getElementById(n)),
                     e.preventDefault()
@@ -454,7 +460,19 @@
                 t && _(t)
             }
         }
-        ))
+        )),
+        document.querySelector(".modal__download").addEventListener('click', (function (e) {
+                e.preventDefault();
+                var cb = document.querySelector(".app-agree-checkbox");
+                if (cb) {
+                    if (cb.checked) {
+                        window.location.href = '/' + this.getAttribute('href') + '-' + cb.getAttribute('data-feature') + '/';
+                    } else {
+                        cb.classList.add('err');
+                    }
+                }
+        }
+        ));
 }
     , function (e, t, n) { }
     , function (e, t, n) {
